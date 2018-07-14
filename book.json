@@ -1,0 +1,20 @@
+{
+	"gitbook": ">=2.0.0",
+	"title": "note",
+	"author": "Liujw",
+	"description": "This is such a great book!" ,
+	"plugins": [
+		"-sharing",
+		"back-to-top-button", 
+		"github", 
+		"splitter", 
+		"sectionx",
+		"theme-comscore",
+		"expandable-chapters"
+	],
+	"pluginsConfig": {
+	    "github": {
+	        "url": "https://github.com/liujw123"
+	    }
+	}
+}
