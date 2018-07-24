@@ -11,7 +11,8 @@
 		"sectionx",
 		"theme-comscore",
 		"expandable-chapters",
-		"3-ba"
+		"3-ba",
+		"github-buttons"
 	],
 	"pluginsConfig": {
 		"github": {
@@ -19,6 +20,14 @@
 		},
 		"3-ba": {
             "token": "eeda89358034bd7683f0aaecb5bad298"
+       },
+       "github-buttons": {
+            "buttons": [{
+		        "user": "liujw123",
+		        "repo": "notebook",
+		        "type": ["star"],
+		        "size": "small"
+		      }]
         }
 	}
 }
