@@ -5,16 +5,20 @@
 	"description": "This is such a great book!" ,
 	"plugins": [
 		"-sharing",
-		"back-to-top-button", 
-		"github", 
-		"splitter", 
+		"back-to-top-button",
+		"github",
+		"splitter",
 		"sectionx",
 		"theme-comscore",
-		"expandable-chapters"
+		"expandable-chapters",
+		"baidu"
 	],
 	"pluginsConfig": {
-	    "github": {
-	        "url": "https://github.com/liujw123"
-	    }
+		"github": {
+			"url": "https://github.com/liujw123"
+		},
+		"baidu": {
+            "token": "a8afc866947347a04191cf86f70e0c17"
+        }
 	}
 }
