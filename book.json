@@ -1,6 +1,6 @@
 {
 	"gitbook": ">=2.0.0",
-	"title": "note",
+	"title": "Note",
 	"author": "Liujw",
 	"description": "This is such a great book!" ,
 	"plugins": [
@@ -11,14 +11,14 @@
 		"sectionx",
 		"theme-comscore",
 		"expandable-chapters",
-		"baidu"
+		"3-ba"
 	],
 	"pluginsConfig": {
 		"github": {
 			"url": "https://github.com/liujw123"
 		},
-		"baidu": {
-            "token": "a8afc866947347a04191cf86f70e0c17"
+		"3-ba": {
+            "token": "eeda89358034bd7683f0aaecb5bad298"
         }
 	}
 }
