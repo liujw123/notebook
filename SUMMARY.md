@@ -4,6 +4,7 @@
 * 本地环境搭建
 	+ scss
 		+ [scss install](localEnvironment/scss/scss_install.md)
+		+ [scss use](localEnvironment/scss/scss_use.md)
 	+ Node
 		+ [nvm 管理 node](localEnvironment/node/nvm_install.md)
 		+ [npm 使用](localEnvironment/node/npm.md)
