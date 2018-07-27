@@ -1,9 +1,9 @@
-###GITBOOK 插件
+#Gitbook 插件
+----------
 
 
-####添加新插件之间需要运行gitbook install来安装新的插件
 
-#####Gitbook默认带有5个插件： 
+####Gitbook默认带有5个插件： 
 
 * highlight 
 * search  
@@ -18,7 +18,7 @@
 	]
 ```
 
-#####title
+###title
 
 * 设置书本的标题
 
@@ -28,7 +28,7 @@
 
 ```
 
-#####author
+###author
 
 * 作者的相关信息
 
@@ -39,7 +39,7 @@
 ```
 
 
-#####description
+###description
 
 * 本书的简单描述
 
@@ -50,7 +50,7 @@
 ```
 
 
-#####language
+###language
 
 * Gitbook使用的语言, 版本2.6.4中可选的语言如下：
 
@@ -69,7 +69,7 @@
 
 
 
-#####links
+###links
 
 * 在左侧导航栏添加链接信息
 
@@ -84,7 +84,7 @@
 ```
 
 
-#####styles
+###styles
 
 * 自定义页面样式， 默认情况下各generator对应的css文件
 
@@ -111,7 +111,7 @@
 ```
 
 
-#####plugins
+###plugins
 * 配置使用的插件
 
 ```json
@@ -123,8 +123,9 @@
 ```
 
 
-###**实用插件**
+##**实用插件**
 
+####添加新插件之间需要运行gitbook install来安装新的插件
 
 #####[expandable Chapters](https://plugins.gitbook.com/plugin/expandable-chapters)
 
