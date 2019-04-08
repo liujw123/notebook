@@ -55,7 +55,7 @@
 }
 
 ```
-###nested 编译排版格式
+>nested 编译排版格式
 
 ```css
 
@@ -72,7 +72,7 @@ sass style.scss:style.css --style nested
 
 ```
 
-###expanded 编译排版格式
+>expanded 编译排版格式
 
 ```css
 
@@ -91,7 +91,7 @@ sass style.scss:style.css --style expanded
 
 ```
 
-###compact 编译排版格式
+>compact 编译排版格式
 
 ```css
 
@@ -104,7 +104,7 @@ sass style.scss:style.css --style compact
 
 ```
 
-###compressed 编译排版格式
+>compressed 编译排版格式
 
 
 ```css
