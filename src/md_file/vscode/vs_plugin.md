@@ -28,7 +28,7 @@
 
 **主题**   
 
-![主题](../../../assets/images/vs_theme.png)   
+![主题](../../assets/images/vs_theme.png)   
 
 ---
 

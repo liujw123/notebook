@@ -7,7 +7,7 @@
 
 ####打开cmd控制台，直接查看node版本，检测是否安装成功
 
-![node_v](../assets/images/node_v.png)
+![node_v](../../assets/images/node_v.png)
 
 #### 全局安装 gulp：
 

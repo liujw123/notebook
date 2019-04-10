@@ -120,7 +120,7 @@ ex:
 ```
 ##### 样例   
 
-![图片](../../../assets/images/aaa.jpg '图片')
+![图片](../../assets/images/aaa.jpg '图片')
 
 ---
 

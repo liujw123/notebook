@@ -12,8 +12,7 @@
 		"theme-comscore",
 		"expandable-chapters",
 		"3-ba",
-		"github-buttons",
-		"gitalk"
+		"github-buttons"
 	],
 	"pluginsConfig": {
 		"github": {

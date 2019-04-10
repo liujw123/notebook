@@ -28,7 +28,7 @@
 
 ###vue-cli选项    (图片下方解释)
 
-![vue-cli](../assets/images/v-cli_select.png)
+![vue-cli](../../assets/images/v-cli_select.png)
 	
 	
 	

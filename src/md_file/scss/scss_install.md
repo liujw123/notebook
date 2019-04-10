@@ -4,7 +4,7 @@
 >sass依赖于ruby环境，所以装sass之前先确认装了ruby。先导官网下载个[ruby](https://rubyinstaller.org/downloads/) 在安装的时候，请勾选Add Ruby executables to your PATH这个选项，添加环境变量，不然以后使用编译软件的时候会提示找不到ruby环境   
 
 
-![ruby](../assets/images/w_scss.png)
+![ruby](../../assets/images/w_scss.png)
 
 >安装完成后需测试安装有没有成功,运行CMD输入以下命令：
 
@@ -20,7 +20,7 @@
 ####2.sass安装
 >安装完ruby之后，在开始菜单中，找到刚才我们安装的ruby，打开Start Command Prompt with Ruby
 
-![sass](../assets/images/sass_install.png)
+![sass](../../assets/images/sass_install.png)
 
 >命令行输入
 
@@ -91,6 +91,6 @@
 
 >安装成功截图：
 
-![sass2](../assets/images/sass2.jpg)
+![sass2](../../assets/images/sass2.jpg)
 
 >附上：[官方安装](https://www.sass.hk/install/)

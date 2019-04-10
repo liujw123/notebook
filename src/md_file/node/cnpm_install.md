@@ -8,7 +8,7 @@
 4. cnpm的作用：淘宝镜像将npm上面的模块同步到国内服务器，提高我们安装模块的时间。   
 5. 安装完淘宝镜像之后，cnpm和npm命令行皆可使用，二者并不冲突
 
-![淘宝镜像](../assets/images/tb_jingxiang.png)	
+![淘宝镜像](../../assets/images/tb_jingxiang.png)	
 
 
 
