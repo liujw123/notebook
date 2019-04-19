@@ -11,6 +11,10 @@
 3. 调用 js sdk 微信支付 api。
 
 ```js
+SDK_config([
+    'chooseWXPay'
+])
+
  // 调用后台接口 生成 签名等信息后调用 sdk api
 let wx_sdk_pay = data =>{
     return new Promise((rs,rj)=>{
@@ -43,7 +47,7 @@ let wx_sdk_pay = data =>{
 ```
 ---
 
-#### **可能由于vue(hash)模式自带`/#`路径，无法调起微信支付，以下方法暂时解决**   
+#### **可能由于vue(hash)模式自带`/#`路径，安卓端无法调起微信支付，以下方法暂时解决**   
 
 >(支付平台配置路径正确的前提下)导致安卓端验证地址一直失败，从而无法调起微信支付。。。
 
@@ -67,8 +71,8 @@ let compatible_andiord_wx_pay = (curHref = location.href,isReturn=false)=>{
 
 ---
 
-###坑
+###注意
 
-1. 可能由于是单页，ios端，一直提示未配置支付路径。（貌似支付地址验证是对页面加载首次的链接进行验证。。。）
+1. 正确配置支付路径，对 android 和 ios 支付地址验证进行兼容
 2. 商户平台配置支付路径上限5个。
-3. 可能由于hash模式，导致验证支付路径ios和android不一样的，总是一端成功另一端失败。
+3. 可能由于hash模式，导致验证支付路径ios和android不一样的，会出现android 或 ios 其中一端失败。

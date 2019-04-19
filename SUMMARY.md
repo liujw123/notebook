@@ -31,6 +31,7 @@
 		+ [微信H5 js-sdk 配置分享](src/md_file/wx/h5/sdk_share.md)
 		+ [微信H5 js-sdk 微信支付](src/md_file/wx/h5/jssdk_wx_pay.md)
 	+ 小程序	
+		+ [小程序-IM-登陆](src/md_file/wx/smallProgram/im_login.md)
 * Visual Studio Code   
 	+ [vs 插件](src/md_file/vscode/vs_plugin.md)
 
