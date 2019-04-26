@@ -10,7 +10,7 @@
 * sharing  
 * font-settings 
 * livereload    
-+ 如果要去除自带的插件， 可以在插件名称前面加"-"   
+>+ 如果要去除自带的插件， 可以在插件名称前面加"-"   
 
 ```json
 	"plugins": [
@@ -20,7 +20,7 @@
 
 #####title
 
->设置书本的标题
+* 设置书本的标题
 
 ```json
 
@@ -30,7 +30,7 @@
 
 #####author
 
->作者的相关信息
+* 作者的相关信息
 
 ```json
 
@@ -41,7 +41,7 @@
 
 #####description
 
->本书的简单描述
+* 本书的简单描述
 
 ```json
 
@@ -52,14 +52,14 @@
 
 #####language
 
->Gitbook使用的语言, 版本2.6.4中可选的语言如下：
+* Gitbook使用的语言, 版本2.6.4中可选的语言如下：
 
 ```
 	en, ar, bn, cs, de, en, es, fa, fi, fr, he, it, ja, ko, no, pl, pt, ro, ru, sv, uk, vi, zh-hans, zh-tw
 ```
 
 
->配置使用简体中文
+* 配置使用简体中文
 
 ```json
 
@@ -71,7 +71,7 @@
 
 #####links
 
->在左侧导航栏添加链接信息
+* 在左侧导航栏添加链接信息
 
 ```json
 
@@ -86,7 +86,7 @@
 
 #####styles
 
->自定义页面样式， 默认情况下各generator对应的css文件
+* 自定义页面样式， 默认情况下各generator对应的css文件
 
 ```json
 
@@ -112,7 +112,7 @@
 
 
 #####plugins
->配置使用的插件
+* 配置使用的插件
 
 ```json
 
@@ -128,7 +128,7 @@
 
 #####[expandable Chapters](https://plugins.gitbook.com/plugin/expandable-chapters)
 
->左侧菜单折叠
+* 左侧菜单折叠
 
 ```json
 
@@ -140,7 +140,7 @@
 
 #####[Disqus](https://plugins.gitbook.com/plugin/disqus)
 
->添加disqus评论
+* 添加disqus评论
 
 ```json
 
@@ -156,7 +156,7 @@
 ```
 
 #####[search Pro](https://plugins.gitbook.com/plugin/search-pro)
->支持中文搜索, 需要将默认的search插件去掉, 注意: 如果标题中有包含的关键字, 标题的样式会有所变化 
+* 支持中文搜索, 需要将默认的search插件去掉, 注意: 如果标题中有包含的关键字, 标题的样式会有所变化 
 
 ```json
 
@@ -176,7 +176,7 @@
 
 #####[to top](https://plugins.gitbook.com/plugin/back-to-top-button)
 
->返回顶部
+* 返回顶部
 
 ```json
 	"plugins": [
@@ -186,7 +186,7 @@
 
 #####[Github](https://plugins.gitbook.com/plugin/github)
 
->添加github图标 
+* 添加github图标 
 
 ```json	
 	"plugins": [ 
@@ -201,7 +201,7 @@
 
 #####[Splitter](https://plugins.gitbook.com/plugin/splitter)
 
->使侧边栏的宽度可以自由调节
+* 使侧边栏的宽度可以自由调节
 
 ```json
 
@@ -213,7 +213,7 @@
 
 #####[Sectionx](https://plugins.gitbook.com/plugin/sectionx)
 
->将页面分块显示 
+* 将页面分块显示 
 
 ```json
 
@@ -225,7 +225,7 @@
 
 #####[Tbfed-pagefooter](https://plugins.gitbook.com/plugin/tbfed-pagefooter)
 
->为页面添加页脚 
+* 为页面添加页脚 
 
 ```json
 
@@ -245,7 +245,7 @@
 
 #####[Toggle Chapters](https://plugins.gitbook.com/plugin/toggle-chapters)
 
->是左侧的章节目录可以折叠 
+* 是左侧的章节目录可以折叠 
 
 ```json
 
@@ -256,7 +256,7 @@
 
 #####[ga](https://plugins.gitbook.com/plugin/ga)
 
->google 统计 
+* google 统计 
 
 ```json
 
@@ -272,19 +272,19 @@
 ```
 
 
-#####[baidu](https://plugins.gitbook.com/plugin/baidu)
+#####[3-ba](https://plugins.gitbook.com/plugin/3-ba)
 
->百度统计 
+* 百度统计 
 
 ```json
 
-	"plugin": [
-	    "baidu"
-	 ],
-	"pluginsConfig": {
-	    "baidu": {
-	        "token": "YOUR TOKEN"
-	    }
+	{
+		"plugins": ["3-ba"],
+		"pluginsConfig": {
+			"3-ba": {
+				"token": "xxxxxxxx"
+			}
+		}
 	}
 
 ```
