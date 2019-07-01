@@ -477,6 +477,77 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" data-path="../smallProgram/im_getsign.html">
+            
+                <a href="../smallProgram/im_getsign.html">
+            
+                    
+                    小程序-IM-签名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="../smallProgram/im_login.html">
+            
+                <a href="../smallProgram/im_login.html">
+            
+                    
+                    小程序-IM-登陆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" data-path="../smallProgram/im_getRecentContact.html">
+            
+                <a href="../smallProgram/im_getRecentContact.html">
+            
+                    
+                    小程序-IM-获取最近联系人列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.4" data-path="../smallProgram/wx_utils.html">
+            
+                <a href="../smallProgram/wx_utils.html">
+            
+                    
+                    小程序-常用工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.5" data-path="../smallProgram/wx_async.html">
+            
+                <a href="../smallProgram/wx_async.html">
+            
+                    
+                    小程序-实现async
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
 
@@ -641,14 +712,18 @@
                                 <h2 id="&#x5FAE;&#x4FE1;h5-jssdk-&#x8C03;&#x8D77;&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;">&#x5FAE;&#x4FE1;h5 jssdk &#x8C03;&#x8D77;&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;</h2>
 <p><strong>vue hash &#x6A21;&#x5F0F;</strong>  </p>
 <blockquote>
-<p>&#x53EA;&#x505A;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#xFF0C;&#x5177;&#x4F53;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x67E5;&#x770B;<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+<p>&#x5177;&#x4F53;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x67E5;&#x770B;<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
 </blockquote>
 <ol>
 <li>&#x767B;&#x9646;&#x5546;&#x6237;&#x53F7;&#x5BF9;&#x5E94;&#x7684;&#x5546;&#x6237;&#x5E73;&#x53F0;--&quot;&#x4EA7;&#x54C1;&#x4E2D;&#x5FC3;&quot;--&quot;&#x5F00;&#x53D1;&#x914D;&#x7F6E;&quot;&#x914D;&#x7F6E; &#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x3002;</li>
 <li>&#x5728;&#x9700;&#x8981;&#x652F;&#x4ED8;&#x7684;&#x9875;&#x9762;<a href="jssdk_config.html">&#x914D;&#x7F6E;&#x6CE8;&#x5165; js-sdk</a>&#x3002;</li>
 <li>&#x8C03;&#x7528; js sdk &#x5FAE;&#x4FE1;&#x652F;&#x4ED8; api&#x3002;</li>
 </ol>
-<pre><code class="lang-js"> <span class="hljs-comment">// &#x8C03;&#x7528;&#x540E;&#x53F0;&#x63A5;&#x53E3; &#x751F;&#x6210; &#x7B7E;&#x540D;&#x7B49;&#x4FE1;&#x606F;&#x540E;&#x8C03;&#x7528; sdk api</span>
+<pre><code class="lang-js">SDK_config([
+    <span class="hljs-string">&apos;chooseWXPay&apos;</span>
+])
+
+ <span class="hljs-comment">// &#x8C03;&#x7528;&#x540E;&#x53F0;&#x63A5;&#x53E3; &#x751F;&#x6210; &#x7B7E;&#x540D;&#x7B49;&#x4FE1;&#x606F;&#x540E;&#x8C03;&#x7528; sdk api</span>
 <span class="hljs-keyword">let</span> wx_sdk_pay = data =&gt;{
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((rs,rj)=&gt;{
         wx.ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
@@ -664,13 +739,13 @@
                     res[<span class="hljs-string">&apos;pay_status&apos;</span>] = <span class="hljs-string">&apos;success&apos;</span>;
                     rs(res);
                 },
-                cancel:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>)</span>{
+                cancel:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>)</span>{ <span class="hljs-comment">// &#x53D6;&#x6D88;</span>
                     res[<span class="hljs-string">&apos;pay_status&apos;</span>] = <span class="hljs-string">&apos;cancel&apos;</span>;
                     rs(res);
                 },
                 fail:err=&gt;{
-                    <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&apos;&#x8C03;&#x7528;&#x652F;&#x4ED8;sdk&#x5931;&#x8D25; chooseWXPay_err&apos;</span>,<span class="hljs-built_in">JSON</span>.stringify(err))
-                    rj(err)
+                    <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&apos;&#x8C03;&#x7528;&#x652F;&#x4ED8;sdk&#x5931;&#x8D25; chooseWXPay_err&apos;</span>,<span class="hljs-built_in">JSON</span>.stringify(err));
+                    rj(err);
                 }
             });
         });
@@ -678,32 +753,33 @@
 }
 </code></pre>
 <hr>
-<h4 id="&#x53EF;&#x80FD;&#x7531;&#x4E8E;vuehash&#x6A21;&#x5F0F;&#x81EA;&#x5E26;&#x8DEF;&#x5F84;&#xFF0C;&#x65E0;&#x6CD5;&#x8C03;&#x8D77;&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;&#xFF0C;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x6682;&#x65F6;&#x89E3;&#x51B3;"><strong>&#x53EF;&#x80FD;&#x7531;&#x4E8E;vue(hash)&#x6A21;&#x5F0F;&#x81EA;&#x5E26;<code>/#</code>&#x8DEF;&#x5F84;&#xFF0C;&#x65E0;&#x6CD5;&#x8C03;&#x8D77;&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;&#xFF0C;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x6682;&#x65F6;&#x89E3;&#x51B3;</strong></h4>
-<blockquote>
-<p>(&#x652F;&#x4ED8;&#x5E73;&#x53F0;&#x914D;&#x7F6E;&#x8DEF;&#x5F84;&#x6B63;&#x786E;&#x7684;&#x524D;&#x63D0;&#x4E0B;)&#x5BFC;&#x81F4;&#x5B89;&#x5353;&#x7AEF;&#x9A8C;&#x8BC1;&#x5730;&#x5740;&#x4E00;&#x76F4;&#x5931;&#x8D25;&#xFF0C;&#x4ECE;&#x800C;&#x65E0;&#x6CD5;&#x8C03;&#x8D77;&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;&#x3002;&#x3002;&#x3002;</p>
-</blockquote>
+<h4 id="&#x5B89;&#x5353;&#x5BF9;&#x4F1A;&#x5BF9;&#x5F53;&#x524D;&#x9875;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x800C;ios&#x5219;&#x4F1A;&#x5BF9;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5237;&#x65B0;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;"><strong>&#x5B89;&#x5353;&#x5BF9;&#x4F1A;&#x5BF9;&#x5F53;&#x524D;&#x9875;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x800C;ios&#x5219;&#x4F1A;&#x5BF9;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5237;&#x65B0;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;</strong></h4>
 <pre><code class="lang-js">
-<span class="hljs-comment">//&#x5F53;&#x524D;url&#x66F4;&#x6539;/&#x517C;&#x5BB9;&#x5B89;&#x5353; sdk &#x652F;&#x4ED8; &#x9A8C;&#x8BC1;&#x5730;&#x5740;&#x5931;&#x8D25;</span>
-<span class="hljs-keyword">let</span> compatible_andiord_wx_pay = (curHref = location.href,isReturn=<span class="hljs-literal">false</span>)=&gt;{
+<span class="hljs-comment">//&#x5F53;&#x524D;url&#x66F4;&#x6539;/ sdk &#x652F;&#x4ED8; &#x9A8C;&#x8BC1;&#x5730;&#x5740;&#x5931;&#x8D25;</span>
+<span class="hljs-keyword">let</span> compatible_wx_pay = (curHref = location.href,isReturn=<span class="hljs-literal">false</span>)=&gt;{
     <span class="hljs-keyword">let</span> u = navigator.userAgent;
     <span class="hljs-keyword">if</span>(curHref.indexOf(<span class="hljs-string">&apos;?a=1&apos;</span>)==<span class="hljs-number">-1</span>){                    <span class="hljs-comment">//&#x5224;&#x65AD;&#x662F;&#x5426; &#x5B58;&#x5728;&apos;?a=1&apos;&#x5FFD;&#x7565;&#x540E;&#x9762;&#x53C2;&#x6570;/&#x8BC6;&#x522B;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x751F;&#x6210;&#x8BA2;&#x5355;&#xFF08;&#x517C;&#x5BB9;&#x5B89;&#x5353;&#xFF09;</span>
-        <span class="hljs-keyword">if</span>(u.indexOf(<span class="hljs-string">&apos;Android&apos;</span>) &gt; <span class="hljs-number">-1</span> || u.indexOf(<span class="hljs-string">&apos;Linux&apos;</span>) &gt; <span class="hljs-number">-1</span>){
+        <span class="hljs-comment">// if(u.indexOf(&apos;Android&apos;) &gt; -1 || u.indexOf(&apos;Linux&apos;) &gt; -1){</span>
             <span class="hljs-keyword">let</span> curHrefArr = curHref.split(<span class="hljs-string">&apos;#&apos;</span>);
             <span class="hljs-keyword">if</span>(isReturn)<span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${curHrefArr[0]}</span>?a=1#<span class="hljs-subst">${curHrefArr[1]}</span>`</span>;
             location.href = <span class="hljs-string">`<span class="hljs-subst">${curHrefArr[0]}</span>?a=1#<span class="hljs-subst">${curHrefArr[1]}</span>`</span>
-        }
+        <span class="hljs-comment">// }</span>
     }
     <span class="hljs-keyword">if</span>(isReturn)<span class="hljs-keyword">return</span> curHref;
 }
 </code></pre>
 <hr>
-<h3 id="&#x5751;">&#x5751;</h3>
+<h3 id="&#x6CE8;&#xFF1A;">&#x6CE8;&#xFF1A;</h3>
 <ol>
-<li>&#x53EF;&#x80FD;&#x7531;&#x4E8E;&#x662F;&#x5355;&#x9875;&#xFF0C;ios&#x7AEF;&#xFF0C;&#x4E00;&#x76F4;&#x63D0;&#x793A;&#x672A;&#x914D;&#x7F6E;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x3002;&#xFF08;&#x8C8C;&#x4F3C;&#x652F;&#x4ED8;&#x5730;&#x5740;&#x9A8C;&#x8BC1;&#x662F;&#x5BF9;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x9996;&#x6B21;&#x7684;&#x94FE;&#x63A5;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#x3002;&#x3002;&#x3002;&#xFF09;</li>
-<li>&#x5546;&#x6237;&#x5E73;&#x53F0;&#x914D;&#x7F6E;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x4E0A;&#x9650;5&#x4E2A;&#x3002;</li>
-<li>&#x53EF;&#x80FD;&#x7531;&#x4E8E;hash&#x6A21;&#x5F0F;&#xFF0C;&#x5BFC;&#x81F4;&#x9A8C;&#x8BC1;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;ios&#x548C;android&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x603B;&#x662F;&#x4E00;&#x7AEF;&#x6210;&#x529F;&#x53E6;&#x4E00;&#x7AEF;&#x5931;&#x8D25;&#x3002;</li>
+<li>&#x5546;&#x6237;&#x5E73;&#x53F0;&#x914D;&#x7F6E;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x4E0A;&#x9650;5&#x4E2A;&#x3002;   </li>
+<li>hash&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;ios&#x5BF9;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5237;&#x65B0;&#x9875;&#x9762;&#x8FDB;&#x884C;&#x5730;&#x5740;&#x6821;&#x9A8C;&#xFF0C;&#x5B89;&#x5353;&#x4F1A;&#x5BF9;&#x5F53;&#x524D;&#x9875;&#x9762;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#xFF0C;&#x5305;&#x542B;hash&#x90E8;&#x5206;&#xFF0C;&apos;?&apos;&#x540E;&#x5FFD;&#x7565;</li>
 </ol>
-
+<blockquote>
+<p>uni-vue-hash &#x591A;&#x4E2A;&#x9875;&#x9762;&#x652F;&#x4ED8;&#x89E3;&#x51B3;&#x65B9;&#x6848;   </p>
+</blockquote>
+<pre><code>1. hash&#x60C5;&#x51B5;&#x4E0B;&#x5BF9;hash&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x5207;&#x65AD;&#x7528;&apos;?&apos;&#x62FC;&#x63A5;&#x3002;
+2. &#x7EDF;&#x4E00;&#x652F;&#x4ED8;&#x9875;&#x9762;&#xFF0C;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8DEF;&#x7531;location&#x5207;&#x6362;&#x5230;&#x652F;&#x4ED8;&#x9875;&#xFF0C;&#x8FD9;&#x6837;&#x53EA;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x652F;&#x4ED8;&#x9875;&#x7684;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x3002;
+</code></pre>
                                 
                                 </section>
                             
@@ -742,7 +818,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"微信H5 js-sdk 微信支付","level":"2.6.1.4","depth":3,"next":{"title":"小程序","level":"2.6.2","depth":2,"ref":"","articles":[]},"previous":{"title":"微信H5 js-sdk 配置分享","level":"2.6.1.3","depth":3,"path":"src/md_file/wx/h5/sdk_share.md","ref":"src/md_file/wx/h5/sdk_share.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/wx/h5/jssdk_wx_pay.md","mtime":"2019-04-11T07:48:27.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-11T10:12:18.995Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"微信H5 js-sdk 微信支付","level":"2.6.1.4","depth":3,"next":{"title":"小程序","level":"2.6.2","depth":2,"ref":"","articles":[{"title":"小程序-IM-签名","level":"2.6.2.1","depth":3,"path":"src/md_file/wx/smallProgram/im_getsign.md","ref":"src/md_file/wx/smallProgram/im_getsign.md","articles":[]},{"title":"小程序-IM-登陆","level":"2.6.2.2","depth":3,"path":"src/md_file/wx/smallProgram/im_login.md","ref":"src/md_file/wx/smallProgram/im_login.md","articles":[]},{"title":"小程序-IM-获取最近联系人列表","level":"2.6.2.3","depth":3,"path":"src/md_file/wx/smallProgram/im_getRecentContact.md","ref":"src/md_file/wx/smallProgram/im_getRecentContact.md","articles":[]},{"title":"小程序-常用工具类","level":"2.6.2.4","depth":3,"path":"src/md_file/wx/smallProgram/wx_utils.md","ref":"src/md_file/wx/smallProgram/wx_utils.md","articles":[]},{"title":"小程序-实现async","level":"2.6.2.5","depth":3,"path":"src/md_file/wx/smallProgram/wx_async.md","ref":"src/md_file/wx/smallProgram/wx_async.md","articles":[]}]},"previous":{"title":"微信H5 js-sdk 配置分享","level":"2.6.1.3","depth":3,"path":"src/md_file/wx/h5/sdk_share.md","ref":"src/md_file/wx/h5/sdk_share.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/wx/h5/jssdk_wx_pay.md","mtime":"2019-07-01T06:04:49.859Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-01T07:34:39.066Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

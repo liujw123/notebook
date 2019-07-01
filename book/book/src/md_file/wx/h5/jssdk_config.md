@@ -2,14 +2,14 @@
 
 **vue hash 模式**  
 
-> 只做简单介绍，具体注意事项查看[官方文档](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115)
+> 具体注意事项查看[官方文档](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115)
 
 
 1. **先到公众号的基本开发配置，设置js接口安全域名（单域名就好，不带协议，不带路径）**   
 2. 安装 weixin-js-sdk 包
     * 命令 `npm install weixin-js-sdk`
 3. 引入包、配置注入sdk
-4. 注入成功，就可以愉快地踩坑了
+4. 注入成功
 
 ---
 
@@ -18,7 +18,7 @@
 ```js
 
     import wx from './weixin-js-sdk';
-
+    const SDK_DEBUG = false;
     let SDK_config = jsApiList => {
         return new Promise((rs,rj)=>{
             _getConfigSign(_get_url_compatible_ios_config())    // 后台获取签名等其他配置信息/
@@ -73,10 +73,12 @@
 ```
 
 --- 
-### 坑
+### 注：
 
-1. url处理/兼容ios。
+1. **config注入尽量避免并发，会出现兼容问题。**
 2. 每次url变化之后都需要重新微信jssdk授权，要用到的页面，mounted 调用config注册sdk。
-3. 设置分享，链接中存在中文，进行encodeURIComponent()，安卓手机会自动encodeURIComponent，ios不会。 
+3. ios签名入参的时候url路径不能含有'#'hash部分。
+4. 设置分享，链接中存在中文，进行encodeURIComponent()，安卓手机会自动encodeURIComponent，ios不会。 
+5. 注意大小写nonceStr。
 
 

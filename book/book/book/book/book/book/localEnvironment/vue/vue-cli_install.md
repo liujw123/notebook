@@ -26,12 +26,15 @@
 	$ vue init webpack vue-cli-demo(projectname)
 ```
 
-* vue-cli选项    (图片下方解释)
+###vue-cli选项    (图片下方解释)
 
-	![vue-cli](../assets/images/v-cli_select.png)
+![vue-cli](../assets/images/v-cli_select.png)
 	
 	
 	
+###命令含义	
+
+
 | 命令 | 解释 |
 | -------- | ----- |
 |Target directory exists. Continue? (Y/n)|找到了<projectname>这个目录是否要继续|
@@ -50,5 +53,6 @@
 | npm run dev  | 开发模式下运行我们的程序。给我们自动构建了开发用的服务器环境和在浏览器中打开，并实时监视我们的代码更改，即时呈现给我们 |
 	
 
+-------------------------------------------------------------------------------
 
 >搞定，附上：[vue开发文档](https://cn.vuejs.org/v2/guide/)

@@ -2,7 +2,7 @@
 
 **vue hash 模式**  
 
-> 只做简单介绍，具体注意事项查看[官方文档](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115)
+> 具体注意事项查看[官方文档](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115)
 
 
 
@@ -11,6 +11,10 @@
 3. 调用 js sdk 微信支付 api。
 
 ```js
+SDK_config([
+    'chooseWXPay'
+])
+
  // 调用后台接口 生成 签名等信息后调用 sdk api
 let wx_sdk_pay = data =>{
     return new Promise((rs,rj)=>{
@@ -27,13 +31,13 @@ let wx_sdk_pay = data =>{
                     res['pay_status'] = 'success';
                     rs(res);
                 },
-                cancel:function(res){
+                cancel:function(res){ // 取消
                     res['pay_status'] = 'cancel';
                     rs(res);
                 },
                 fail:err=>{
-                    console.warn('调用支付sdk失败 chooseWXPay_err',JSON.stringify(err))
-                    rj(err)
+                    console.warn('调用支付sdk失败 chooseWXPay_err',JSON.stringify(err));
+                    rj(err);
                 }
             });
         });
@@ -43,22 +47,20 @@ let wx_sdk_pay = data =>{
 ```
 ---
 
-#### **可能由于vue(hash)模式自带`/#`路径，无法调起微信支付，以下方法暂时解决**   
-
->(支付平台配置路径正确的前提下)导致安卓端验证地址一直失败，从而无法调起微信支付。。。
+#### **安卓对会对当前页地址进行验证，而ios则会对最后一次刷新进行验证**   
 
 
 ```js
 
-//当前url更改/兼容安卓 sdk 支付 验证地址失败
-let compatible_andiord_wx_pay = (curHref = location.href,isReturn=false)=>{
+//当前url更改/ sdk 支付 验证地址失败
+let compatible_wx_pay = (curHref = location.href,isReturn=false)=>{
     let u = navigator.userAgent;
     if(curHref.indexOf('?a=1')==-1){                    //判断是否 存在'?a=1'忽略后面参数/识别为当前目录生成订单（兼容安卓）
-    	if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1){
+    	// if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1){
             let curHrefArr = curHref.split('#');
             if(isReturn)return `${curHrefArr[0]}?a=1#${curHrefArr[1]}`;
     		location.href = `${curHrefArr[0]}?a=1#${curHrefArr[1]}`
-    	}
+    	// }
     }
     if(isReturn)return curHref;
 }
@@ -67,8 +69,12 @@ let compatible_andiord_wx_pay = (curHref = location.href,isReturn=false)=>{
 
 ---
 
-###坑
+### 注：   
 
-1. 可能由于是单页，ios端，一直提示未配置支付路径。（貌似支付地址验证是对页面加载首次的链接进行验证。。。）
-2. 商户平台配置支付路径上限5个。
-3. 可能由于hash模式，导致验证支付路径ios和android不一样的，总是一端成功另一端失败。
+1. 商户平台配置支付路径上限5个。   
+2. hash情况下，ios对最后一次刷新页面进行地址校验，安卓会对当前页面地址进行校验，包含hash部分，'?'后忽略
+
+> uni-vue-hash 多个页面支付解决方案   
+
+    1. hash情况下对hash部分进行切断用'?'拼接。
+    2. 统一支付页面，用浏览器路由location切换到支付页，这样只需要配置支付页的支付路径。

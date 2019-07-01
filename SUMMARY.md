@@ -31,8 +31,11 @@
 		+ [微信H5 js-sdk 配置分享](src/md_file/wx/h5/sdk_share.md)
 		+ [微信H5 js-sdk 微信支付](src/md_file/wx/h5/jssdk_wx_pay.md)
 	+ 小程序	
+		+ [小程序-IM-签名](src/md_file/wx/smallProgram/im_getsign.md)
 		+ [小程序-IM-登陆](src/md_file/wx/smallProgram/im_login.md)
 		+ [小程序-IM-获取最近联系人列表](src/md_file/wx/smallProgram/im_getRecentContact.md)
+		+ [小程序-常用工具类](src/md_file/wx/smallProgram/wx_utils.md)
+		+ [小程序-实现async](src/md_file/wx/smallProgram/wx_async.md)
 * Visual Studio Code   
 	+ [vs 插件](src/md_file/vscode/vs_plugin.md)
 

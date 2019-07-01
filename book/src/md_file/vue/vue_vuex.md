@@ -72,4 +72,4 @@
 	
 ```
 
->搞定，附上：[vuex文档](https://vuex.vuejs.org/zh/)
+> [vuex文档](https://vuex.vuejs.org/zh/)

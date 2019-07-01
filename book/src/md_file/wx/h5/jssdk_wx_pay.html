@@ -480,7 +480,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.6.2.1" data-path="../smallProgram/im_login.html">
+        <li class="chapter " data-level="2.6.2.1" data-path="../smallProgram/im_getsign.html">
+            
+                <a href="../smallProgram/im_getsign.html">
+            
+                    
+                    小程序-IM-签名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="../smallProgram/im_login.html">
             
                 <a href="../smallProgram/im_login.html">
             
@@ -493,12 +506,38 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6.2.2" data-path="../smallProgram/im_getRecentContact.html">
+        <li class="chapter " data-level="2.6.2.3" data-path="../smallProgram/im_getRecentContact.html">
             
                 <a href="../smallProgram/im_getRecentContact.html">
             
                     
                     小程序-IM-获取最近联系人列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.4" data-path="../smallProgram/wx_utils.html">
+            
+                <a href="../smallProgram/wx_utils.html">
+            
+                    
+                    小程序-常用工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.5" data-path="../smallProgram/wx_async.html">
+            
+                <a href="../smallProgram/wx_async.html">
+            
+                    
+                    小程序-实现async
             
                 </a>
             
@@ -673,7 +712,7 @@
                                 <h2 id="&#x5FAE;&#x4FE1;h5-jssdk-&#x8C03;&#x8D77;&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;">&#x5FAE;&#x4FE1;h5 jssdk &#x8C03;&#x8D77;&#x5FAE;&#x4FE1;&#x652F;&#x4ED8;</h2>
 <p><strong>vue hash &#x6A21;&#x5F0F;</strong>  </p>
 <blockquote>
-<p>&#x53EA;&#x505A;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#xFF0C;&#x5177;&#x4F53;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x67E5;&#x770B;<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+<p>&#x5177;&#x4F53;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x67E5;&#x770B;<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
 </blockquote>
 <ol>
 <li>&#x767B;&#x9646;&#x5546;&#x6237;&#x53F7;&#x5BF9;&#x5E94;&#x7684;&#x5546;&#x6237;&#x5E73;&#x53F0;--&quot;&#x4EA7;&#x54C1;&#x4E2D;&#x5FC3;&quot;--&quot;&#x5F00;&#x53D1;&#x914D;&#x7F6E;&quot;&#x914D;&#x7F6E; &#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x3002;</li>
@@ -700,13 +739,13 @@
                     res[<span class="hljs-string">&apos;pay_status&apos;</span>] = <span class="hljs-string">&apos;success&apos;</span>;
                     rs(res);
                 },
-                cancel:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>)</span>{
+                cancel:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>)</span>{ <span class="hljs-comment">// &#x53D6;&#x6D88;</span>
                     res[<span class="hljs-string">&apos;pay_status&apos;</span>] = <span class="hljs-string">&apos;cancel&apos;</span>;
                     rs(res);
                 },
                 fail:err=&gt;{
-                    <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&apos;&#x8C03;&#x7528;&#x652F;&#x4ED8;sdk&#x5931;&#x8D25; chooseWXPay_err&apos;</span>,<span class="hljs-built_in">JSON</span>.stringify(err))
-                    rj(err)
+                    <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&apos;&#x8C03;&#x7528;&#x652F;&#x4ED8;sdk&#x5931;&#x8D25; chooseWXPay_err&apos;</span>,<span class="hljs-built_in">JSON</span>.stringify(err));
+                    rj(err);
                 }
             });
         });
@@ -714,7 +753,7 @@
 }
 </code></pre>
 <hr>
-<h4 id="&#x5B89;&#x5353;&#x5BF9;&#x4F1A;&#x5BF9;&#x5F53;&#x524D;&#x9875;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x800C;ios&#x5219;&#x4F1A;&#x5BF9;&#x9996;&#x6B21;&#x8FDB;&#x5165;&#x6216;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5237;&#x65B0;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;"><strong>&#x5B89;&#x5353;&#x5BF9;&#x4F1A;&#x5BF9;&#x5F53;&#x524D;&#x9875;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x800C;ios&#x5219;&#x4F1A;&#x5BF9;&#x9996;&#x6B21;&#x8FDB;&#x5165;&#x6216;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5237;&#x65B0;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;</strong></h4>
+<h4 id="&#x5B89;&#x5353;&#x5BF9;&#x4F1A;&#x5BF9;&#x5F53;&#x524D;&#x9875;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x800C;ios&#x5219;&#x4F1A;&#x5BF9;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5237;&#x65B0;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;"><strong>&#x5B89;&#x5353;&#x5BF9;&#x4F1A;&#x5BF9;&#x5F53;&#x524D;&#x9875;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x800C;ios&#x5219;&#x4F1A;&#x5BF9;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5237;&#x65B0;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;</strong></h4>
 <pre><code class="lang-js">
 <span class="hljs-comment">//&#x5F53;&#x524D;url&#x66F4;&#x6539;/ sdk &#x652F;&#x4ED8; &#x9A8C;&#x8BC1;&#x5730;&#x5740;&#x5931;&#x8D25;</span>
 <span class="hljs-keyword">let</span> compatible_wx_pay = (curHref = location.href,isReturn=<span class="hljs-literal">false</span>)=&gt;{
@@ -730,16 +769,16 @@
 }
 </code></pre>
 <hr>
-<h3 id="&#x6CE8;&#x610F;">&#x6CE8;&#x610F;</h3>
+<h3 id="&#x6CE8;&#xFF1A;">&#x6CE8;&#xFF1A;</h3>
 <ol>
 <li>&#x5546;&#x6237;&#x5E73;&#x53F0;&#x914D;&#x7F6E;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x4E0A;&#x9650;5&#x4E2A;&#x3002;   </li>
-<li>&#x5F53;&#x7F51;&#x7AD9;&#x53EA;&#x901A;&#x8FC7;&#x5355;&#x4E00;&#x5165;&#x53E3;&#x8FDB;&#x5165;&#x7F51;&#x7AD9;&#xFF0C;&#x5546;&#x6237;&#x5E73;&#x53F0;ios&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x53EA;&#x9700;&#x914D;&#x7F6E;&#x5165;&#x53E3;&#x7F51;&#x5740;&#xFF08;&#x56E0;&#x4E3A;ios&#x7AEF;&#x8FDB;&#x5165;&#x7F51;&#x7AD9;&#x540E;&#x8DEF;&#x7531;&#x5207;&#x6362;&#x4E0D;&#x4F1A;&#x663E;&#x5F0F;&#x5730;&#x5728;&#x57DF;&#x540D;&#x4E0A;&#x66F4;&#x6539;&#xFF0C;&#x590D;&#x5236;&#x57DF;&#x540D;&#x59CB;&#x7EC8;&#x4E00;&#x6837;&#xFF09;&#x800C;&#x5B89;&#x5353;&#x5219;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#xFF08;&#x6CE8;&#xFF1A;&#x5305;&#x542B;hash&#x90E8;&#x5206;&#x4E0E;&#x8DEF;&#x7531;&#x8DEF;&#x5F84;&#xFF0C;&#x65E0;&#x9700;&#x5177;&#x4F53;&#x5230;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;<strong>&#x4F46;&#x662F;&#x5982;&#x679C;&#x5E26;hash&#x548C;&#x8DEF;&#x5F84;&#x8FDB;&#x5165;&#x7F51;&#x7AD9;&#xFF0C;ios&#x652F;&#x4ED8;&#x8BC6;&#x522B;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x5219;&#x4F1A;&#x68C0;&#x9A8C;&#x9996;&#x6B21;&#x8FDB;&#x5165;&#x9875;&#x9762;&#x5730;&#x5740;&#x5305;&#x542B;hash&#x90E8;&#x5206;&#x4E0E;&#x8DEF;&#x7531;&#x8DEF;&#x5F84;&#x6216;&#x8005;&#x7F51;&#x7AD9;&#x6574;&#x4F53;&#x5237;&#x65B0;&#x7684;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5730;&#x5740;</strong>&#xFF0C;&#x7531;&#x4E8E;&#x5546;&#x6237;&#x53EA;&#x652F;&#x6301;5&#x4E2A;&#x57DF;&#x540D;&#x4F1A;&#x51FA;&#x73B0;&#x914D;&#x7F6E;&#x4E0A;&#x9650;&#xFF1B;</li>
+<li>hash&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;ios&#x5BF9;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5237;&#x65B0;&#x9875;&#x9762;&#x8FDB;&#x884C;&#x5730;&#x5740;&#x6821;&#x9A8C;&#xFF0C;&#x5B89;&#x5353;&#x4F1A;&#x5BF9;&#x5F53;&#x524D;&#x9875;&#x9762;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#xFF0C;&#x5305;&#x542B;hash&#x90E8;&#x5206;&#xFF0C;&apos;?&apos;&#x540E;&#x5FFD;&#x7565;</li>
 </ol>
 <blockquote>
 <p>uni-vue-hash &#x591A;&#x4E2A;&#x9875;&#x9762;&#x652F;&#x4ED8;&#x89E3;&#x51B3;&#x65B9;&#x6848;   </p>
-<pre><code>1. &#x5BF9;hash&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x5FFD;&#x7565;&#xFF0C;&#x5728;hash&#x524D;&#x52A0;`?`(&#x5373;`?#/...`)&#x6216;&#x8005;`?a=1#/`,&#x8FD9;&#x6837;&#x652F;&#x4ED8;&#x9A8C;&#x8BC1;&#x5C31;&#x4F1A;&#x5FFD;&#x7565;hash&#x90E8;&#x5206;&#xFF0C;&#x4ECE;&#x800C;&#x5546;&#x6237;&#x5E73;&#x53F0;&#x53EA;&#x9700;&#x914D;&#x7F6E;&#x4E0D;&#x5E26;hash&#x90E8;&#x5206;&#x7684;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x5C31;&#x53EF;&#x4EE5;&#x3002;&#x6CE8;&#x610F;**&#x5B89;&#x5353;&#x5373;&#x4F7F;&#x5FFD;&#x7565;hash&#xFF0C;&#x8DEF;&#x7531;&#x5207;&#x6362;&#x4E5F;&#x4F1A;&#x6539;&#x53D8;&#x88AB;&#x5FFD;&#x7565;hash&#x8DEF;&#x5F84;&#x548C;&#x53C2;&#x6570;&#xFF0C;&#x800C;ios&#x5219;&#x9996;&#x6B21;&#x8FDB;&#x5165;&#x4F1A;&#x4ECE;&#x5730;&#x5740;&#x83B7;&#x53D6;hash&#x540E;&#x8DEF;&#x5F84;&#x548C;&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x540E;&#x7EED;&#x8DEF;&#x7531;&#x5207;&#x6362;&#x5219;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x88AB;&#x5FFD;&#x7565;&#x540E;&#x7684;hash&#x90E8;&#x5206;&#xFF0C;&#x5207;&#x6362;&#x9875;&#x9762;&#x540E;&#x88AB;&#x5FFD;&#x7565;hash&#x90E8;&#x5206;&#x8FD8;&#x662F;&#x4F1A;&#x548C;&#x521A;&#x8FDB;&#x6765;&#x65F6;&#x4E00;&#x6837;&#x3002;** 
-</code></pre></blockquote>
-<pre><code>2. &#x7EDF;&#x4E00;&#x652F;&#x4ED8;&#x9875;&#x9762;&#xFF0C;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8DEF;&#x7531;location&#x5207;&#x6362;&#x5230;&#x652F;&#x4ED8;&#x9875;&#xFF0C;&#x8FD9;&#x6837;&#x53EA;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x652F;&#x4ED8;&#x9875;&#x7684;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x5C31;&#x53EF;&#x4EE5;&#x3002;
+</blockquote>
+<pre><code>1. hash&#x60C5;&#x51B5;&#x4E0B;&#x5BF9;hash&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x5207;&#x65AD;&#x7528;&apos;?&apos;&#x62FC;&#x63A5;&#x3002;
+2. &#x7EDF;&#x4E00;&#x652F;&#x4ED8;&#x9875;&#x9762;&#xFF0C;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8DEF;&#x7531;location&#x5207;&#x6362;&#x5230;&#x652F;&#x4ED8;&#x9875;&#xFF0C;&#x8FD9;&#x6837;&#x53EA;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x652F;&#x4ED8;&#x9875;&#x7684;&#x652F;&#x4ED8;&#x8DEF;&#x5F84;&#x3002;
 </code></pre>
                                 
                                 </section>
@@ -779,7 +818,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"微信H5 js-sdk 微信支付","level":"2.6.1.4","depth":3,"next":{"title":"小程序","level":"2.6.2","depth":2,"ref":"","articles":[{"title":"小程序-IM-登陆","level":"2.6.2.1","depth":3,"path":"src/md_file/wx/smallProgram/im_login.md","ref":"src/md_file/wx/smallProgram/im_login.md","articles":[]},{"title":"小程序-IM-获取最近联系人列表","level":"2.6.2.2","depth":3,"path":"src/md_file/wx/smallProgram/im_getRecentContact.md","ref":"src/md_file/wx/smallProgram/im_getRecentContact.md","articles":[]}]},"previous":{"title":"微信H5 js-sdk 配置分享","level":"2.6.1.3","depth":3,"path":"src/md_file/wx/h5/sdk_share.md","ref":"src/md_file/wx/h5/sdk_share.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/wx/h5/jssdk_wx_pay.md","mtime":"2019-04-23T06:10:27.759Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-26T10:03:54.833Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"微信H5 js-sdk 微信支付","level":"2.6.1.4","depth":3,"next":{"title":"小程序","level":"2.6.2","depth":2,"ref":"","articles":[{"title":"小程序-IM-签名","level":"2.6.2.1","depth":3,"path":"src/md_file/wx/smallProgram/im_getsign.md","ref":"src/md_file/wx/smallProgram/im_getsign.md","articles":[]},{"title":"小程序-IM-登陆","level":"2.6.2.2","depth":3,"path":"src/md_file/wx/smallProgram/im_login.md","ref":"src/md_file/wx/smallProgram/im_login.md","articles":[]},{"title":"小程序-IM-获取最近联系人列表","level":"2.6.2.3","depth":3,"path":"src/md_file/wx/smallProgram/im_getRecentContact.md","ref":"src/md_file/wx/smallProgram/im_getRecentContact.md","articles":[]},{"title":"小程序-常用工具类","level":"2.6.2.4","depth":3,"path":"src/md_file/wx/smallProgram/wx_utils.md","ref":"src/md_file/wx/smallProgram/wx_utils.md","articles":[]},{"title":"小程序-实现async","level":"2.6.2.5","depth":3,"path":"src/md_file/wx/smallProgram/wx_async.md","ref":"src/md_file/wx/smallProgram/wx_async.md","articles":[]}]},"previous":{"title":"微信H5 js-sdk 配置分享","level":"2.6.1.3","depth":3,"path":"src/md_file/wx/h5/sdk_share.md","ref":"src/md_file/wx/h5/sdk_share.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/wx/h5/jssdk_wx_pay.md","mtime":"2019-07-01T06:04:49.859Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-01T07:35:53.712Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
