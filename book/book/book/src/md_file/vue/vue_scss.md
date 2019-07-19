@@ -50,8 +50,8 @@
 ####3. 在用scss的地方写上
 
 ```html
-	<style lang="scss" scoped="" type="text/css"></style>
+	<style lang="scss" type="text/css"></style>
 ```
 
 
->附上：[scss文档](https://www.sass.hk/docs/)
+> [scss文档](https://www.sass.hk/docs/)

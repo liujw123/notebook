@@ -11,6 +11,10 @@
 3. 调用 js sdk 微信支付 api。
 
 ```js
+SDK_config([
+    'chooseWXPay'
+])
+
  // 调用后台接口 生成 签名等信息后调用 sdk api
 let wx_sdk_pay = data =>{
     return new Promise((rs,rj)=>{
@@ -43,22 +47,20 @@ let wx_sdk_pay = data =>{
 ```
 ---
 
-#### **可能由于vue(hash)模式自带`/#`路径，无法调起微信支付，以下方法暂时解决**   
-
->(支付平台配置路径正确的前提下)导致安卓端验证地址一直失败，从而无法调起微信支付。。。
+#### **安卓对会对当前页地址进行验证，而ios则会对首次进入或最后一次刷新地址进行验证**   
 
 
 ```js
 
-//当前url更改/兼容安卓 sdk 支付 验证地址失败
-let compatible_andiord_wx_pay = (curHref = location.href,isReturn=false)=>{
+//当前url更改/ sdk 支付 验证地址失败
+let compatible_wx_pay = (curHref = location.href,isReturn=false)=>{
     let u = navigator.userAgent;
     if(curHref.indexOf('?a=1')==-1){                    //判断是否 存在'?a=1'忽略后面参数/识别为当前目录生成订单（兼容安卓）
-    	if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1){
+    	// if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1){
             let curHrefArr = curHref.split('#');
             if(isReturn)return `${curHrefArr[0]}?a=1#${curHrefArr[1]}`;
     		location.href = `${curHrefArr[0]}?a=1#${curHrefArr[1]}`
-    	}
+    	// }
     }
     if(isReturn)return curHref;
 }
@@ -67,8 +69,12 @@ let compatible_andiord_wx_pay = (curHref = location.href,isReturn=false)=>{
 
 ---
 
-###坑
+###注意   
 
-1. 可能由于是单页，ios端，一直提示未配置支付路径。（貌似支付地址验证是对页面加载首次的链接进行验证。。。）
-2. 商户平台配置支付路径上限5个。
-3. 可能由于hash模式，导致验证支付路径ios和android不一样的，总是一端成功另一端失败。
+1. 商户平台配置支付路径上限5个。   
+2. 当网站只通过单一入口进入网站，商户平台ios支付路径只需配置入口网址（因为ios端进入网站后路由切换不会显式地在域名上更改，复制域名始终一样）而安卓则需要配置每个页面的支付路径（注：包含hash部分与路由路径，无需具体到文件），**但是如果带hash和路径进入网站，ios支付识别支付路径则会检验首次进入页面地址包含hash部分与路由路径或者网站整体刷新的最后一次地址**，由于商户只支持5个域名会出现配置上限；
+
+> uni-vue-hash 多个页面支付解决方案   
+    1. 对hash部分进行忽略，在hash前加`?`(即`?#/...`)或者`?a=1#/`,这样支付验证就会忽略hash部分，从而商户平台只需配置不带hash部分的支付路径就可以。注意**安卓即使忽略hash，路由切换也会改变被忽略hash路径和参数，而ios则首次进入会从地址获取hash后路径和参数，但是后续路由切换则不会修改被忽略后的hash部分，切换页面后被忽略hash部分还是会和刚进来时一样。** 
+
+    2. 统一支付页面，用浏览器路由location切换到支付页，这样只需要配置支付页的支付路径就可以。
