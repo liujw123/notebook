@@ -10,6 +10,7 @@
 
 + Node
 	+ [nvm 管理node版本控制](src/md_file/node/nvm_install.md)
+	+ [nvm 设置全局公共依赖](src/md_file/node/nvm_public.md)
 	+ [npm 使用](src/md_file/node/npm.md)
 	+ [cnpm 安装](src/md_file/node/cnpm_install.md)
 
