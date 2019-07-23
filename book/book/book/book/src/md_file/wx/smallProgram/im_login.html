@@ -85,6 +85,8 @@
     <link rel="next" href="im_getRecentContact.html" />
     
     
+    <link rel="prev" href="im_getsign.html" />
+    
 
     <style>
     @media only screen and (max-width: 640px) {
@@ -480,7 +482,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.6.2.1" data-path="im_login.html">
+        <li class="chapter " data-level="2.6.2.1" data-path="im_getsign.html">
+            
+                <a href="im_getsign.html">
+            
+                    
+                    小程序-IM-签名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6.2.2" data-path="im_login.html">
             
                 <a href="im_login.html">
             
@@ -493,12 +508,38 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6.2.2" data-path="im_getRecentContact.html">
+        <li class="chapter " data-level="2.6.2.3" data-path="im_getRecentContact.html">
             
                 <a href="im_getRecentContact.html">
             
                     
                     小程序-IM-获取最近联系人列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.4" data-path="wx_utils.html">
+            
+                <a href="wx_utils.html">
+            
+                    
+                    小程序-常用工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.5" data-path="wx_async.html">
+            
+                <a href="wx_async.html">
+            
+                    
+                    小程序-实现async
             
                 </a>
             
@@ -681,7 +722,9 @@
 <li>&#x8C03;&#x7528; SDK &#x767B;&#x9646;</li>
 <li>&#x767B;&#x9646;&#x6210;&#x529F;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528; SDK &#x529F;&#x80FD;</li>
 </ol>
-<pre><code class="lang-js">
+<p><strong>identifierNick &#x7684;&#x503C;&#x53EA;&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x767B;&#x5F55;&#x65F6;&#x6709;&#x6548;&#xFF08;&#x7B2C;&#x4E00;&#x6B21;&#x767B;&#x5F55;&#x67D0; identifier)&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x5E10;&#x53F7;&#x540E;&#x7684;&#x6635;&#x79F0;&#x4FEE;&#x6539;&#xFF0C;&#x9700;&#x8981;&#x8C03;&#x7528; (setProfilePortrait)[<a href="https://cloud.tencent.com/document/product/269/1599" target="_blank">https://cloud.tencent.com/document/product/269/1599</a>] &#x63A5;&#x53E3;&#x3002;</strong></p>
+<pre><code class="lang-js">    <span class="hljs-comment">// im_handler.js</span>
+
    <span class="hljs-comment">/*
     * &#x767B;&#x5F55; im
     */</span>
@@ -691,19 +734,17 @@
     * &#x767B;&#x5F55; im
     */</span>
     <span class="hljs-comment">/*
-    * &#x4F7F;&#x7528;&#x95ED;&#x5305;&#xFF0C;&#x662F;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x5355;&#x72EC;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x53EF;&#x4EE5;&#x4FDD;&#x7559;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x4E3A;&#x4E86;&#x65B0;&#x6D88;&#x606F;&#x76D1;&#x542C;&#x56DE;&#x8C03;&#x7ED1;&#x5B9A;
-    * loginInfo &#x767B;&#x9646;&#x6240;&#x9700;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x8BE6;&#x60C5;&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x6587;&#x6863;
-    * MsgNotifyCallBack &#x5F53;&#x6709;&#x6700;&#x65B0;&#x6D88;&#x606F;&#x65F6;&#x6240;&#x89E6;&#x53D1;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;
-    * &#x76EE;&#x524D;&#x53EA;&#x76D1;&#x542C; &#x65B0;&#x6D88;&#x606F;&#x548C;&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7B80;&#x5355;1v1&#x804A;&#x5929;
-    * promise &#x5C01;&#x88C5;&#xFF0C;im &#x9700;&#x8981;&#x76D1;&#x542C;&#x591A;&#x79CD;&#x5F02;&#x6B65;&#xFF0C;&#x6240;&#x4EE5;&#x914D;&#x5408; async/await &#x51FD;&#x6570;
+    * &#x4F7F;&#x7528;&#x95ED;&#x5305;&#xFF0C;&#x5B9E;&#x73B0;&#x5355;&#x72EC;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x4FDD;&#x7559;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x65B0;&#x6D88;&#x606F;&#x76D1;&#x542C;&#x56DE;&#x8C03;&#x7ED1;&#x5B9A;
     */</span>
+
     <span class="hljs-keyword">let</span> login = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-        <span class="hljs-comment">// &#x7ED1;&#x5B9A; onMsgNotify this &#x6307;&#x5411; / &#x56E0;&#x4E3A;im&#x767B;&#x9646;&#x540E;&#x7ED1;&#x5B9A;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#x51FD;&#x6570;&#xFF0C;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x7ED1;&#x5B9A;&#x5BF9;&#x8C61;&#x6307;&#x9488;&#xFF0C;&#x52A8;&#x6001;&#x4FEE;&#x6539;cb&#x51FD;&#x6570;&#xFF0C;&#x5B9E;&#x73B0;&#x591A;&#x9875;cb</span>
+        <span class="hljs-comment">// &#x7ED1;&#x5B9A; onMsgNotify &#x4E0D;&#x540C;&#x9875;&#x9762;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;&#x51FD;&#x6570;</span>
         <span class="hljs-keyword">let</span> MsgNotifyObj = {};
         <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">{loginInfo, MsgNotifyCallBack}</span>) </span>{
             MsgNotifyObj.MsgNotifyCallBack = MsgNotifyCallBack;
             <span class="hljs-comment">// &#x68C0;&#x67E5;&#x662F;&#x5426;&#x767B;&#x5F55;&#x8FD4;&#x56DE; true &#x548C; false,&#x4E0D;&#x767B;&#x5F55;&#x5219;&#x91CD;&#x65B0;&#x767B;&#x5F55;</span>
             <span class="hljs-keyword">if</span>(im.checkLogin())<span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-string">&apos;&#x6B63;&#x5728;&#x767B;&#x9646;&#x4E2D;&apos;</span>);
+
             im.Log.warn(<span class="hljs-string">&apos;&#x5F00;&#x59CB;&#x767B;&#x5F55; im&apos;</span>)
             <span class="hljs-keyword">if</span> (!loginInfo.imId || !loginInfo.userSig){
                 im.Log.error(<span class="hljs-string">&quot;&#x767B;&#x5F55; im &#x5931;&#x8D25;[im &#x6570;&#x636E;&#x672A;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6BD5;]&quot;</span>);
@@ -712,22 +753,22 @@
 
             <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7528;&#x6237;&#x8EAB;&#x4EFD;</span>
             <span class="hljs-keyword">var</span> _loginInfo = {
-                <span class="hljs-string">&apos;sdkAppID&apos;</span>: loginInfo.sdkAppID, <span class="hljs-comment">//    &#x7528;&#x6237;&#x6807;&#x8BC6;&#x63A5;&#x5165; SDK &#x7684;&#x5E94;&#x7528; ID&#xFF0C;&#x5FC5;&#x586B;</span>
-                <span class="hljs-string">&apos;appIDAt3rd&apos;</span>: loginInfo.sdkAppID, <span class="hljs-comment">// App &#x7528;&#x6237;&#x4F7F;&#x7528; OAuth &#x6388;&#x6743;&#x4F53;&#x7CFB;&#x5206;&#x914D;&#x7684; Appid&#xFF0C;&#x5FC5;&#x586B;</span>
-                <span class="hljs-string">&apos;accountType&apos;</span>: loginInfo.accountType, <span class="hljs-comment">// &#x5E10;&#x53F7;&#x4F53;&#x7CFB;&#x96C6;&#x6210;&#x4E2D;&#x7684; accountType&#xFF0C;&#x5FC5;&#x586B;</span>
-                <span class="hljs-string">&apos;identifier&apos;</span>: loginInfo.imId, <span class="hljs-comment">// &#x5F53;&#x524D;&#x7528;&#x6237;&#x5E10;&#x53F7;&#xFF0C;&#x5FC5;&#x586B;</span>
-                <span class="hljs-string">&apos;identifierNick&apos;</span>: loginInfo.imName, <span class="hljs-comment">// &#x5F53;&#x524D;&#x7528;&#x6237;&#x6635;&#x79F0;&#xFF0C;&#x9009;&#x586B;</span>
-                <span class="hljs-string">&apos;userSig&apos;</span>: loginInfo.userSig, <span class="hljs-comment">// &#x9274;&#x6743; Token&#xFF0C;&#x5FC5;&#x586B;</span>
+                <span class="hljs-string">&apos;sdkAppID&apos;</span>: loginInfo.sdkAppID,             <span class="hljs-comment">// &#x7528;&#x6237;&#x6807;&#x8BC6;&#x63A5;&#x5165; SDK &#x7684;&#x5E94;&#x7528; ID&#xFF0C;&#x5FC5;&#x586B;</span>
+                <span class="hljs-string">&apos;appIDAt3rd&apos;</span>: loginInfo.sdkAppID,           <span class="hljs-comment">// App &#x7528;&#x6237;&#x4F7F;&#x7528; OAuth &#x6388;&#x6743;&#x4F53;&#x7CFB;&#x5206;&#x914D;&#x7684; Appid&#xFF0C;&#x5FC5;&#x586B;</span>
+                <span class="hljs-string">&apos;accountType&apos;</span>: loginInfo.accountType,       <span class="hljs-comment">// &#x5E10;&#x53F7;&#x4F53;&#x7CFB;&#x96C6;&#x6210;&#x4E2D;&#x7684; accountType&#xFF0C;&#x5FC5;&#x586B;</span>
+                <span class="hljs-string">&apos;identifier&apos;</span>: loginInfo.imId,               <span class="hljs-comment">// &#x5F53;&#x524D;&#x7528;&#x6237;&#x5E10;&#x53F7;&#xFF0C;&#x5FC5;&#x586B;</span>
+                <span class="hljs-string">&apos;identifierNick&apos;</span>: loginInfo.imName,         <span class="hljs-comment">// &#x5F53;&#x524D;&#x7528;&#x6237;&#x6635;&#x79F0;&#xFF0C;&#x9009;&#x586B;</span>
+                <span class="hljs-string">&apos;userSig&apos;</span>: loginInfo.userSig,               <span class="hljs-comment">// &#x9274;&#x6743; Token&#xFF0C;&#x5FC5;&#x586B;</span>
             }
             <span class="hljs-comment">// &#x6307;&#x5B9A;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;</span>
             <span class="hljs-keyword">var</span> listeners = {
-                <span class="hljs-string">&quot;onConnNotify&quot;</span>: onConnNotify, <span class="hljs-comment">// &#x76D1;&#x542C;&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x56DE;&#x8C03;&#x53D8;&#x5316;&#x4E8B;&#x4EF6;,&#x5FC5;&#x586B;</span>
-                <span class="hljs-string">&quot;onMsgNotify&quot;</span>: onMsgNotify.bind(MsgNotifyObj) <span class="hljs-comment">// &#x76D1;&#x542C;&#x65B0;&#x6D88;&#x606F;&#x56DE;&#x8C03;&#x53D8;&#x5316;&#x4E8B;&#x4EF6;,&#x5FC5;&#x586B;&#xFF0C;&#x7ED1;&#x5B9A;MsgNotifyObj&#x6307;&#x9488;&#xFF0C;&#x5B9E;&#x73B0;&#x767B;&#x5F55;&#x540E;&#x52A8;&#x6001;&#x4FEE;&#x6539;cb&#x51FD;&#x6570;&#xFF0C;&#x4ECE;&#x800C;&#x5728;&#x4E0D;&#x540C;&#x9875;&#x9762;&#x5B9E;&#x73B0;&#x56DE;&#x8C03;</span>
+                <span class="hljs-string">&quot;onConnNotify&quot;</span>: onConnNotify,                   <span class="hljs-comment">// &#x76D1;&#x542C;&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x56DE;&#x8C03;&#x53D8;&#x5316;&#x4E8B;&#x4EF6;,&#x5FC5;&#x586B;</span>
+                <span class="hljs-string">&quot;onMsgNotify&quot;</span>: onMsgNotify.bind(MsgNotifyObj)   <span class="hljs-comment">// &#x76D1;&#x542C;&#x65B0;&#x6D88;&#x606F;&#x56DE;&#x8C03;&#x53D8;&#x5316;&#x4E8B;&#x4EF6;,&#x5FC5;&#x586B;&#xFF0C;&#x7ED1;&#x5B9A;MsgNotifyObj&#x6307;&#x9488;&#xFF0C;&#x5B9E;&#x73B0;&#x767B;&#x5F55;&#x540E;&#x52A8;&#x6001;&#x4FEE;&#x6539;cb&#x51FD;&#x6570;&#xFF0C;&#x4ECE;&#x800C;&#x5728;&#x4E0D;&#x540C;&#x9875;&#x9762;&#x5B9E;&#x73B0;&#x56DE;&#x8C03;</span>
             }
             <span class="hljs-comment">//&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#xFF0C;&#x9009;&#x586B;</span>
             <span class="hljs-keyword">var</span> options = {
-                <span class="hljs-string">&apos;isAccessFormalEnv&apos;</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// &#x662F;&#x5426;&#x8BBF;&#x95EE;&#x6B63;&#x5F0F;&#x73AF;&#x5883;&#xFF0C;&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x6B63;&#x5F0F;&#xFF0C;&#x9009;&#x586B;</span>
-                <span class="hljs-string">&apos;isLogOn&apos;</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// &#x662F;&#x5426;&#x5F00;&#x542F;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#x65E5;&#x5FD7;,&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#xFF0C;&#x9009;&#x586B;</span>
+                <span class="hljs-string">&apos;isAccessFormalEnv&apos;</span>: <span class="hljs-literal">true</span>,  <span class="hljs-comment">// &#x662F;&#x5426;&#x8BBF;&#x95EE;&#x6B63;&#x5F0F;&#x73AF;&#x5883;&#xFF0C;&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x6B63;&#x5F0F;&#xFF0C;&#x9009;&#x586B;</span>
+                <span class="hljs-string">&apos;isLogOn&apos;</span>: <span class="hljs-literal">false</span>            <span class="hljs-comment">// &#x662F;&#x5426;&#x5F00;&#x542F;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#x65E5;&#x5FD7;,&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#xFF0C;&#x9009;&#x586B;</span>
             }
 
             <span class="hljs-comment">// sdk &#x767B;&#x5F55;&#xFF08;&#x72EC;&#x7ACB;&#x6A21;&#x5F0F;&#xFF09;</span>
@@ -749,7 +790,6 @@
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onMsgNotify</span>(<span class="hljs-params">newMsgList</span>) </span>{
         <span class="hljs-comment">// &#x5F53;&#x6709;&#x65B0;&#x6D88;&#x606F;&#x65F6;&#x89E6;&#x53D1;page&#x51FD;&#x6570; &#xFF0C;&#xFF0C;&#xFF0C;&#x8C03;&#x7528;login&#xFF0C;fnName</span>
-
         <span class="hljs-keyword">this</span>.MsgNotifyCallBack&amp;&amp;<span class="hljs-keyword">this</span>.MsgNotifyCallBack(newMsgList);
         <span class="hljs-comment">// &#x5982;&#x679C;&#x6709;&#x65B0;&#x6D88;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x5904;&#x5728;&#x4F1A;&#x8BDD;&#x5217;&#x8868;&#x754C;&#x9762;&#x4E0A;</span>
         <span class="hljs-comment">// if (newMsgList &amp;&amp; contactListThat) {</span>
@@ -801,8 +841,12 @@
 
             
                 
+                <a href="im_getsign.html" class="navigation navigation-prev " aria-label="Previous page: 小程序-IM-签名">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="im_getRecentContact.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 小程序-IM-获取最近联系人列表">
+                
+                <a href="im_getRecentContact.html" class="navigation navigation-next " aria-label="Next page: 小程序-IM-获取最近联系人列表">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -813,7 +857,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"小程序-IM-登陆","level":"2.6.2.1","depth":3,"next":{"title":"小程序-IM-获取最近联系人列表","level":"2.6.2.2","depth":3,"path":"src/md_file/wx/smallProgram/im_getRecentContact.md","ref":"src/md_file/wx/smallProgram/im_getRecentContact.md","articles":[]},"previous":{"title":"小程序","level":"2.6.2","depth":2,"ref":"","articles":[{"title":"小程序-IM-登陆","level":"2.6.2.1","depth":3,"path":"src/md_file/wx/smallProgram/im_login.md","ref":"src/md_file/wx/smallProgram/im_login.md","articles":[]},{"title":"小程序-IM-获取最近联系人列表","level":"2.6.2.2","depth":3,"path":"src/md_file/wx/smallProgram/im_getRecentContact.md","ref":"src/md_file/wx/smallProgram/im_getRecentContact.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/wx/smallProgram/im_login.md","mtime":"2019-04-26T09:49:41.154Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-26T10:03:54.833Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"小程序-IM-登陆","level":"2.6.2.2","depth":3,"next":{"title":"小程序-IM-获取最近联系人列表","level":"2.6.2.3","depth":3,"path":"src/md_file/wx/smallProgram/im_getRecentContact.md","ref":"src/md_file/wx/smallProgram/im_getRecentContact.md","articles":[]},"previous":{"title":"小程序-IM-签名","level":"2.6.2.1","depth":3,"path":"src/md_file/wx/smallProgram/im_getsign.md","ref":"src/md_file/wx/smallProgram/im_getsign.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/wx/smallProgram/im_login.md","mtime":"2019-05-21T07:37:57.993Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-01T07:34:39.066Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,4 +1,4 @@
-## nvm 管理 node 版本 （ Window环境 ）
+## nvm 下载安装 （ Window环境 ）
 
 
 #### 注意：   
@@ -59,7 +59,10 @@
 
 **注意:** 如果npm安装完后，出现不是内部命令，注意查看环境变量Path是否有包含nodejs目录，还有就是 nvm 安装10.10.0版本后的 node 不带 npm 模块。。。。
 
-#### 发现10.10.0版本后的 node 不带 npm 模块
+#### 发现使用 nvm 安装 10.10.0 版本以上的 node 不带 npm 模块，导致无法找到 npm 命令
+
++ **解决方案 ： ** [独立 npm 目录，多个 node 版本共享依赖](./nvm_public.md) 
+
 
 
 
@@ -73,4 +76,4 @@
 
 ##### 在VSCode中如何切换node版本
 
-* 我在命令行里用nvm切换了node的版本： nvm use v8.11.1，重启VSCode之后，本想着VSCode使用的node版本也会跟着一起改变，但是事与愿违，VSCode的版本依然是原来的6.10.1。 需要调用下面命令，表示node的默认启动版本：`nvm alias default v8.11.1`然后VSCode的node版本才会跟着一起变。
+* 我在命令行里用nvm切换了node的版本： `nvm use v8.11.1`，重启VSCode之后，本想着VSCode使用的node版本也会跟着一起改变，但是事与愿违，VSCode的版本依然是原来的 6.10.1。 需要调用下面命令，表示node的默认启动版本：`nvm alias default v8.11.1` 然后VSCode的node版本才会跟着一起变。
