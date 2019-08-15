@@ -10,6 +10,7 @@
 
 
 ```js
+
     let imhandler = require('../../utils/im_handler.js'); // 这个是所有 im 事件的 js
     import Promise from '../../utils/promise.js'; // 目前小程序原生取消支持Promise
     import regeneratorRuntime, { async } from '../../utils/regenerator-runtime.js'  //async /小程序原生不支持async
@@ -17,39 +18,32 @@
     const app = getApp()
 
     onShow(){
-        app.initImParams(()=>{ // 获取签名,初始化登陆所需的数据数据
-            imhandler.login({   // 调用im登陆
-                loginInfo:app.data.im,
-                MsgNotifyCallBack:this.formatContactList,  // 有新消息时，触发的回调
-            })
-            .then(this.formatContactList, // 加载数据，处理数据
-            err=>{
-                console.warn('im 登陆失败-->',err)
-            })
-            .catch(err=>{
-                console.warn('加载最近联系人失败--->',err)
-                util.showNone('加载最近联系人失败');
-            })
-        }),
+        app.initImParams()
+        .then(()=>imhandler.login({
+            loginInfo:app.data.im,
+            MsgNotifyCallBack:this.formatContactList, // 监听新消息，调用获取最近联系人
+        }),err=>console.warn('im 登陆失败-->',err))
+        .then(this.formatContactList) // 登陆完成，获取最近联系人列表
+        .catch(err=>console.warn('加载最近联系人失败-->',err))
     },
     // 处理最近联系人列表信息、格式化
     async formatContactList(){
         try{
-            let contactArr = await Promise.all([this.getRecentContactList(),this.getConversationList()]);
-            let contactList = contactArr[0].map(e=>{
-                for(let i in contactArr[1]){
-                    var session = contactArr[1][i]
+            await new Promise(rs=>setTimeout(rs,500)) // 防止新用户没有几时更新到im服务器，导致获取失败
+            let recentContactList = await this.getRecentContactList();
+            let conversationList = await this.getConversationList();
+            // 整合列表
+            let contactList = recentContactList.map(e=>{
+                for(let i in conversationList){
+                    var session = conversationList[i]
                     if (session.unread() > 0&&e.friendId === session.id())e.unreadMsgCount = session.unread();
                 }
                 return e
             });
-
-
             // 设置联系人列表
             this.setData({
                 contactList: contactList
             })
-            // contactList 最终所需要的最近联系人列表数据
         }catch(err){
             console.warn('获取最近联系人列表、未读消息失败--->',err);
         }

@@ -2,7 +2,9 @@
 
 * [Home](README.md)
 
-
++ javascript
+	+ [`__proto__`](src/md_file/javascript/proto.md)
+	+ [`prototype`](src/md_file/javascript/prototype.md)
 + vue
 	+ [vue-cli 搭建](src/md_file/vue/vue-cli_install.md)
 	+ [vuex 配置](src/md_file/vue/vue_vuex.md)
@@ -29,7 +31,7 @@
 	+ [gitbook 安装](src/md_file/gitbook/gitbook.md)
 	+ [gitbook 插件](src/md_file/gitbook/plugin.md)
 
-* 微信	
+* weChat	
 	+ H5
 		+ [微信H5 微信授权](src/md_file/wx/h5/h5_login.md)
 		+ [微信H5 js-sdk 配置注入](src/md_file/wx/h5/jssdk_config.md)
