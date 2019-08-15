@@ -49,4 +49,4 @@
 
 * 常用
 	+ [Totop](src/md_file/demo/js/totop.md)
-	+ [js 工具](src/md_file/demo/js/js_utils.md)
+	+ [js util](src/md_file/demo/js/js_utils.md)

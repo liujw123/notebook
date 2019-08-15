@@ -2,7 +2,7 @@
 
 **vue hash 模式**  
 
-> 只做简单介绍，具体注意事项查看[官方文档](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115)
+> 具体注意事项查看[官方文档](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115)
 
 
 
@@ -31,13 +31,13 @@ let wx_sdk_pay = data =>{
                     res['pay_status'] = 'success';
                     rs(res);
                 },
-                cancel:function(res){
+                cancel:function(res){ // 取消
                     res['pay_status'] = 'cancel';
                     rs(res);
                 },
                 fail:err=>{
-                    console.warn('调用支付sdk失败 chooseWXPay_err',JSON.stringify(err))
-                    rj(err)
+                    console.warn('调用支付sdk失败 chooseWXPay_err',JSON.stringify(err));
+                    rj(err);
                 }
             });
         });
@@ -47,7 +47,7 @@ let wx_sdk_pay = data =>{
 ```
 ---
 
-#### **安卓对会对当前页地址进行验证，而ios则会对首次进入或最后一次刷新地址进行验证**   
+#### **安卓对会对当前页地址进行验证，而ios则会对最后一次刷新进行验证**   
 
 
 ```js
@@ -69,12 +69,12 @@ let compatible_wx_pay = (curHref = location.href,isReturn=false)=>{
 
 ---
 
-###注意   
+### 注：   
 
 1. 商户平台配置支付路径上限5个。   
-2. 当网站只通过单一入口进入网站，商户平台ios支付路径只需配置入口网址（因为ios端进入网站后路由切换不会显式地在域名上更改，复制域名始终一样）而安卓则需要配置每个页面的支付路径（注：包含hash部分与路由路径，无需具体到文件），**但是如果带hash和路径进入网站，ios支付识别支付路径则会检验首次进入页面地址包含hash部分与路由路径或者网站整体刷新的最后一次地址**，由于商户只支持5个域名会出现配置上限；
+2. hash情况下，ios对最后一次刷新页面进行地址校验，安卓会对当前页面地址进行校验，包含hash部分，'?'后忽略
 
 > uni-vue-hash 多个页面支付解决方案   
-    1. 对hash部分进行忽略，在hash前加`?`(即`?#/...`)或者`?a=1#/`,这样支付验证就会忽略hash部分，从而商户平台只需配置不带hash部分的支付路径就可以。注意**安卓即使忽略hash，路由切换也会改变被忽略hash路径和参数，而ios则首次进入会从地址获取hash后路径和参数，但是后续路由切换则不会修改被忽略后的hash部分，切换页面后被忽略hash部分还是会和刚进来时一样。** 
 
-    2. 统一支付页面，用浏览器路由location切换到支付页，这样只需要配置支付页的支付路径就可以。
+    1. hash情况下对hash部分进行切断用'?'拼接。
+    2. 统一支付页面，用浏览器路由location切换到支付页，这样只需要配置支付页的支付路径。

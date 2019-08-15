@@ -1,0 +1,1554 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>小程序-实现async · Note</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Liujw">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="wx_utils.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Home
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    vue
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../vue/vue-cli_install.html">
+            
+                <a href="../../vue/vue-cli_install.html">
+            
+                    
+                    vue-cli 搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../vue/vue_vuex.html">
+            
+                <a href="../../vue/vue_vuex.html">
+            
+                    
+                    vuex 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../vue/vue_scss.html">
+            
+                <a href="../../vue/vue_scss.html">
+            
+                    
+                    vue scss 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    Node
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../node/nvm_install.html">
+            
+                <a href="../../node/nvm_install.html">
+            
+                    
+                    nvm 管理node版本控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../node/npm.html">
+            
+                <a href="../../node/npm.html">
+            
+                    
+                    npm 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../node/cnpm_install.html">
+            
+                <a href="../../node/cnpm_install.html">
+            
+                    
+                    cnpm 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    scss
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../scss/scss_install.html">
+            
+                <a href="../../scss/scss_install.html">
+            
+                    
+                    scss 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../scss/scss_use.html">
+            
+                <a href="../../scss/scss_use.html">
+            
+                    
+                    scss 简单使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                    gulp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../../gulp/gulp_install.html">
+            
+                <a href="../../gulp/gulp_install.html">
+            
+                    
+                    gulp 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    Gitbook
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../gitbook/gitbook.html">
+            
+                <a href="../../gitbook/gitbook.html">
+            
+                    
+                    gitbook 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../gitbook/plugin.html">
+            
+                <a href="../../gitbook/plugin.html">
+            
+                    
+                    gitbook 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <span>
+            
+                    
+                    微信
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" >
+            
+                <span>
+            
+                    
+                    H5
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1.1" data-path="../h5/h5_login.html">
+            
+                <a href="../h5/h5_login.html">
+            
+                    
+                    微信H5 微信授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.2" data-path="../h5/jssdk_config.html">
+            
+                <a href="../h5/jssdk_config.html">
+            
+                    
+                    微信H5 js-sdk 配置注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.3" data-path="../h5/sdk_share.html">
+            
+                <a href="../h5/sdk_share.html">
+            
+                    
+                    微信H5 js-sdk 配置分享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.4" data-path="../h5/jssdk_wx_pay.html">
+            
+                <a href="../h5/jssdk_wx_pay.html">
+            
+                    
+                    微信H5 js-sdk 微信支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" >
+            
+                <span>
+            
+                    
+                    小程序
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" data-path="im_getsign.html">
+            
+                <a href="im_getsign.html">
+            
+                    
+                    小程序-IM-签名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="im_login.html">
+            
+                <a href="im_login.html">
+            
+                    
+                    小程序-IM-登陆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" data-path="im_getRecentContact.html">
+            
+                <a href="im_getRecentContact.html">
+            
+                    
+                    小程序-IM-获取最近联系人列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.4" data-path="wx_utils.html">
+            
+                <a href="wx_utils.html">
+            
+                    
+                    小程序-常用工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6.2.5" data-path="wx_async.html">
+            
+                <a href="wx_async.html">
+            
+                    
+                    小程序-实现async
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" >
+            
+                <span>
+            
+                    
+                    Visual Studio Code
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../../vscode/vs_plugin.html">
+            
+                <a href="../../vscode/vs_plugin.html">
+            
+                    
+                    vs 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" >
+            
+                <span>
+            
+                    
+                    MarkDown
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../../markdown/simple_grammar.html">
+            
+                <a href="../../markdown/simple_grammar.html">
+            
+                    
+                    markdown 基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" >
+            
+                <span>
+            
+                    
+                    常用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../../demo/js/totop.html">
+            
+                <a href="../../demo/js/totop.html">
+            
+                    
+                    Totop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../../demo/js/js_utils.html">
+            
+                <a href="../../demo/js/js_utils.html">
+            
+                    
+                    js 工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >小程序-实现async</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x5C0F;&#x7A0B;&#x5E8F;-&#x5B9E;&#x73B0;async">&#x5C0F;&#x7A0B;&#x5E8F;-&#x5B9E;&#x73B0;async</h3>
+<p><strong>&#x622A;&#x6B62;&#x4ECA;&#x5929;&#x5C0F;&#x7A0B;&#x5E8F;&#x8FD8;&#x4E0D;&#x652F;&#x6301;async&#xFF08;2019/07/01&#xFF09;&#xFF0C;<a href="http://es6.ruanyifeng.com/#docs/async" target="_blank">async &#x51FD;&#x6570;</a>&#x3002;  </strong> </p>
+<blockquote>
+<p>&#x4E0B;&#x8F7D;<a href="https://github.com/facebook/regenerator" target="_blank">regenerator</a>&#x5E93;&#xFF0C;&#x76EE;&#x6807;&#x6587;&#x4EF6; =&gt; regenerator/packages/regenerator-runtime/runtime.js.</p>
+</blockquote>
+<hr>
+<h4 id="&#x5F15;&#x5165;&#x4F7F;&#x7528;">&#x5F15;&#x5165;&#x4F7F;&#x7528;</h4>
+<pre><code class="lang-js">
+    <span class="hljs-keyword">import</span> regeneratorRuntime,{<span class="hljs-keyword">async</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../utils/regenerator-runtime.js&apos;</span>;
+
+    page({
+        <span class="hljs-keyword">async</span> asyncFunc(){
+            <span class="hljs-keyword">let</span> test = <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(rs=&gt;setTimeout(()=&gt;rs(<span class="hljs-string">&apos;test&apos;</span>),<span class="hljs-number">1600</span>));
+            <span class="hljs-built_in">console</span>.log(test)
+        },
+
+    })
+</code></pre>
+<hr>
+<h4 id="regenerator&#x5E93;&#x590D;&#x5236;&#x4EE3;&#x7801;">regenerator&#x5E93;&#x590D;&#x5236;&#x4EE3;&#x7801;</h4>
+<blockquote>
+<p>&#x5982;&#x6709;&#x4FB5;&#x6743;&#xFF0C;&#x8054;&#x7CFB;&#x5220;&#x9664;</p>
+</blockquote>
+<pre><code class="lang-js">
+    <span class="hljs-comment">/**
+    * Copyright (c) 2014-present, Facebook, Inc.
+    *
+    * This source code is licensed under the MIT license found in the
+    * LICENSE file in the root directory of this source tree.
+    */</span>
+    <span class="hljs-keyword">var</span> regeneratorRuntime = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">exports</span>) </span>{
+<span class="hljs-meta">    &quot;use strict&quot;</span>;
+
+    <span class="hljs-keyword">var</span> Op = <span class="hljs-built_in">Object</span>.prototype;
+    <span class="hljs-keyword">var</span> hasOwn = Op.hasOwnProperty;
+    <span class="hljs-keyword">var</span> <span class="hljs-literal">undefined</span>; <span class="hljs-comment">// More compressible than void 0.</span>
+    <span class="hljs-keyword">var</span> $<span class="hljs-built_in">Symbol</span> = <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Symbol</span> === <span class="hljs-string">&quot;function&quot;</span> ? <span class="hljs-built_in">Symbol</span> : {};
+    <span class="hljs-keyword">var</span> iteratorSymbol = $<span class="hljs-built_in">Symbol</span>.iterator || <span class="hljs-string">&quot;@@iterator&quot;</span>;
+    <span class="hljs-keyword">var</span> asyncIteratorSymbol = $<span class="hljs-built_in">Symbol</span>.asyncIterator || <span class="hljs-string">&quot;@@asyncIterator&quot;</span>;
+    <span class="hljs-keyword">var</span> toStringTagSymbol = $<span class="hljs-built_in">Symbol</span>.toStringTag || <span class="hljs-string">&quot;@@toStringTag&quot;</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">wrap</span>(<span class="hljs-params">innerFn, outerFn, self, tryLocsList</span>) </span>{
+        <span class="hljs-comment">// If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.</span>
+        <span class="hljs-keyword">var</span> protoGenerator = outerFn &amp;&amp; outerFn.prototype <span class="hljs-keyword">instanceof</span> Generator ? outerFn : Generator;
+        <span class="hljs-keyword">var</span> generator = <span class="hljs-built_in">Object</span>.create(protoGenerator.prototype);
+        <span class="hljs-keyword">var</span> context = <span class="hljs-keyword">new</span> Context(tryLocsList || []);
+
+        <span class="hljs-comment">// The ._invoke method unifies the implementations of the .next,</span>
+        <span class="hljs-comment">// .throw, and .return methods.</span>
+        generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+        <span class="hljs-keyword">return</span> generator;
+    }
+    exports.wrap = wrap;
+
+    <span class="hljs-comment">// Try/catch helper to minimize deoptimizations. Returns a completion</span>
+    <span class="hljs-comment">// record like context.tryEntries[i].completion. This interface could</span>
+    <span class="hljs-comment">// have been (and was previously) designed to take a closure to be</span>
+    <span class="hljs-comment">// invoked without arguments, but in all the cases we care about we</span>
+    <span class="hljs-comment">// already have an existing method we want to call, so there&apos;s no need</span>
+    <span class="hljs-comment">// to create a new function object. We can even get away with assuming</span>
+    <span class="hljs-comment">// the method takes exactly one argument, since that happens to be true</span>
+    <span class="hljs-comment">// in every case, so we don&apos;t have to touch the arguments object. The</span>
+    <span class="hljs-comment">// only additional allocation required is the completion record, which</span>
+    <span class="hljs-comment">// has a stable shape and so hopefully should be cheap to allocate.</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tryCatch</span>(<span class="hljs-params">fn, obj, arg</span>) </span>{
+        <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">return</span> { type: <span class="hljs-string">&quot;normal&quot;</span>, arg: fn.call(obj, arg) };
+        } <span class="hljs-keyword">catch</span> (err) {
+        <span class="hljs-keyword">return</span> { type: <span class="hljs-string">&quot;throw&quot;</span>, arg: err };
+        }
+    }
+
+    <span class="hljs-keyword">var</span> GenStateSuspendedStart = <span class="hljs-string">&quot;suspendedStart&quot;</span>;
+    <span class="hljs-keyword">var</span> GenStateSuspendedYield = <span class="hljs-string">&quot;suspendedYield&quot;</span>;
+    <span class="hljs-keyword">var</span> GenStateExecuting = <span class="hljs-string">&quot;executing&quot;</span>;
+    <span class="hljs-keyword">var</span> GenStateCompleted = <span class="hljs-string">&quot;completed&quot;</span>;
+
+    <span class="hljs-comment">// Returning this object from the innerFn has the same effect as</span>
+    <span class="hljs-comment">// breaking out of the dispatch switch statement.</span>
+    <span class="hljs-keyword">var</span> ContinueSentinel = {};
+
+    <span class="hljs-comment">// Dummy constructor functions that we use as the .constructor and</span>
+    <span class="hljs-comment">// .constructor.prototype properties for functions that return Generator</span>
+    <span class="hljs-comment">// objects. For full spec compliance, you may wish to configure your</span>
+    <span class="hljs-comment">// minifier not to mangle the names of these two functions.</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Generator</span>(<span class="hljs-params"></span>) </span>{}
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">GeneratorFunction</span>(<span class="hljs-params"></span>) </span>{}
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">GeneratorFunctionPrototype</span>(<span class="hljs-params"></span>) </span>{}
+
+    <span class="hljs-comment">// This is a polyfill for %IteratorPrototype% for environments that</span>
+    <span class="hljs-comment">// don&apos;t natively support it.</span>
+    <span class="hljs-keyword">var</span> IteratorPrototype = {};
+    IteratorPrototype[iteratorSymbol] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };
+
+    <span class="hljs-keyword">var</span> getProto = <span class="hljs-built_in">Object</span>.getPrototypeOf;
+    <span class="hljs-keyword">var</span> NativeIteratorPrototype = getProto &amp;&amp; getProto(getProto(values([])));
+    <span class="hljs-keyword">if</span> (NativeIteratorPrototype &amp;&amp;
+        NativeIteratorPrototype !== Op &amp;&amp;
+        hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+        <span class="hljs-comment">// This environment has a native %IteratorPrototype%; use it instead</span>
+        <span class="hljs-comment">// of the polyfill.</span>
+        IteratorPrototype = NativeIteratorPrototype;
+    }
+
+    <span class="hljs-keyword">var</span> Gp = GeneratorFunctionPrototype.prototype =
+        Generator.prototype = <span class="hljs-built_in">Object</span>.create(IteratorPrototype);
+    GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+    GeneratorFunctionPrototype.constructor = GeneratorFunction;
+    GeneratorFunctionPrototype[toStringTagSymbol] =
+        GeneratorFunction.displayName = <span class="hljs-string">&quot;GeneratorFunction&quot;</span>;
+
+    <span class="hljs-comment">// Helper for defining the .next, .throw, and .return methods of the</span>
+    <span class="hljs-comment">// Iterator interface in terms of a single ._invoke method.</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">defineIteratorMethods</span>(<span class="hljs-params">prototype</span>) </span>{
+        [<span class="hljs-string">&quot;next&quot;</span>, <span class="hljs-string">&quot;throw&quot;</span>, <span class="hljs-string">&quot;return&quot;</span>].forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">method</span>) </span>{
+        prototype[method] = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arg</span>) </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._invoke(method, arg);
+        };
+        });
+    }
+
+    exports.isGeneratorFunction = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">genFun</span>) </span>{
+        <span class="hljs-keyword">var</span> ctor = <span class="hljs-keyword">typeof</span> genFun === <span class="hljs-string">&quot;function&quot;</span> &amp;&amp; genFun.constructor;
+        <span class="hljs-keyword">return</span> ctor
+        ? ctor === GeneratorFunction ||
+            <span class="hljs-comment">// For the native GeneratorFunction constructor, the best we can</span>
+            <span class="hljs-comment">// do is to check its .name property.</span>
+            (ctor.displayName || ctor.name) === <span class="hljs-string">&quot;GeneratorFunction&quot;</span>
+        : <span class="hljs-literal">false</span>;
+    };
+
+    exports.mark = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">genFun</span>) </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Object</span>.setPrototypeOf) {
+        <span class="hljs-built_in">Object</span>.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+        } <span class="hljs-keyword">else</span> {
+        genFun.__proto__ = GeneratorFunctionPrototype;
+        <span class="hljs-keyword">if</span> (!(toStringTagSymbol <span class="hljs-keyword">in</span> genFun)) {
+            genFun[toStringTagSymbol] = <span class="hljs-string">&quot;GeneratorFunction&quot;</span>;
+        }
+        }
+        genFun.prototype = <span class="hljs-built_in">Object</span>.create(Gp);
+        <span class="hljs-keyword">return</span> genFun;
+    };
+
+    <span class="hljs-comment">// Within the body of any async function, `await x` is transformed to</span>
+    <span class="hljs-comment">// `yield regeneratorRuntime.awrap(x)`, so that the runtime can test</span>
+    <span class="hljs-comment">// `hasOwn.call(value, &quot;__await&quot;)` to determine if the yielded value is</span>
+    <span class="hljs-comment">// meant to be awaited.</span>
+    exports.awrap = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arg</span>) </span>{
+        <span class="hljs-keyword">return</span> { __await: arg };
+    };
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">AsyncIterator</span>(<span class="hljs-params">generator</span>) </span>{
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">invoke</span>(<span class="hljs-params">method, arg, resolve, reject</span>) </span>{
+        <span class="hljs-keyword">var</span> record = tryCatch(generator[method], generator, arg);
+        <span class="hljs-keyword">if</span> (record.type === <span class="hljs-string">&quot;throw&quot;</span>) {
+            reject(record.arg);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">var</span> result = record.arg;
+            <span class="hljs-keyword">var</span> value = result.value;
+            <span class="hljs-keyword">if</span> (value &amp;&amp;
+                <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">&quot;object&quot;</span> &amp;&amp;
+                hasOwn.call(value, <span class="hljs-string">&quot;__await&quot;</span>)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.resolve(value.__await).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+                invoke(<span class="hljs-string">&quot;next&quot;</span>, value, resolve, reject);
+            }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+                invoke(<span class="hljs-string">&quot;throw&quot;</span>, err, resolve, reject);
+            });
+            }
+
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.resolve(value).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">unwrapped</span>) </span>{
+            <span class="hljs-comment">// When a yielded Promise is resolved, its final value becomes</span>
+            <span class="hljs-comment">// the .value of the Promise&lt;{value,done}&gt; result for the</span>
+            <span class="hljs-comment">// current iteration.</span>
+            result.value = unwrapped;
+            resolve(result);
+            }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
+            <span class="hljs-comment">// If a rejected Promise was yielded, throw the rejection back</span>
+            <span class="hljs-comment">// into the async generator function so it can be handled there.</span>
+            <span class="hljs-keyword">return</span> invoke(<span class="hljs-string">&quot;throw&quot;</span>, error, resolve, reject);
+            });
+        }
+        }
+
+        <span class="hljs-keyword">var</span> previousPromise;
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enqueue</span>(<span class="hljs-params">method, arg</span>) </span>{
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callInvokeWithMethodAndArg</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{
+            invoke(method, arg, resolve, reject);
+            });
+        }
+
+        <span class="hljs-keyword">return</span> previousPromise =
+            <span class="hljs-comment">// If enqueue has been called before, then we want to wait until</span>
+            <span class="hljs-comment">// all previous Promises have been resolved before calling invoke,</span>
+            <span class="hljs-comment">// so that results are always delivered in the correct order. If</span>
+            <span class="hljs-comment">// enqueue has not been called before, then it is important to</span>
+            <span class="hljs-comment">// call invoke immediately, without waiting on a callback to fire,</span>
+            <span class="hljs-comment">// so that the async generator function has the opportunity to do</span>
+            <span class="hljs-comment">// any necessary setup in a predictable way. This predictability</span>
+            <span class="hljs-comment">// is why the Promise constructor synchronously invokes its</span>
+            <span class="hljs-comment">// executor callback, and why async functions synchronously</span>
+            <span class="hljs-comment">// execute code before the first await. Since we implement simple</span>
+            <span class="hljs-comment">// async functions in terms of async generators, it is especially</span>
+            <span class="hljs-comment">// important to get this right, even though it requires care.</span>
+            previousPromise ? previousPromise.then(
+            callInvokeWithMethodAndArg,
+            <span class="hljs-comment">// Avoid propagating failures to Promises returned by later</span>
+            <span class="hljs-comment">// invocations of the iterator.</span>
+            callInvokeWithMethodAndArg
+            ) : callInvokeWithMethodAndArg();
+        }
+
+        <span class="hljs-comment">// Define the unified helper method that is used to implement .next,</span>
+        <span class="hljs-comment">// .throw, and .return (see defineIteratorMethods).</span>
+        <span class="hljs-keyword">this</span>._invoke = enqueue;
+    }
+
+    defineIteratorMethods(AsyncIterator.prototype);
+    AsyncIterator.prototype[asyncIteratorSymbol] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };
+    exports.AsyncIterator = AsyncIterator;
+
+    <span class="hljs-comment">// Note that simple async functions are implemented on top of</span>
+    <span class="hljs-comment">// AsyncIterator objects; they just return a Promise for the value of</span>
+    <span class="hljs-comment">// the final result produced by the iterator.</span>
+    exports.async = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">innerFn, outerFn, self, tryLocsList</span>) </span>{
+        <span class="hljs-keyword">var</span> iter = <span class="hljs-keyword">new</span> AsyncIterator(
+        wrap(innerFn, outerFn, self, tryLocsList)
+        );
+
+        <span class="hljs-keyword">return</span> exports.isGeneratorFunction(outerFn)
+        ? iter <span class="hljs-comment">// If outerFn is a generator, return the full iterator.</span>
+        : iter.next().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>) </span>{
+            <span class="hljs-keyword">return</span> result.done ? result.value : iter.next();
+            });
+    };
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeInvokeMethod</span>(<span class="hljs-params">innerFn, self, context</span>) </span>{
+        <span class="hljs-keyword">var</span> state = GenStateSuspendedStart;
+
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">invoke</span>(<span class="hljs-params">method, arg</span>) </span>{
+        <span class="hljs-keyword">if</span> (state === GenStateExecuting) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Generator is already running&quot;</span>);
+        }
+
+        <span class="hljs-keyword">if</span> (state === GenStateCompleted) {
+            <span class="hljs-keyword">if</span> (method === <span class="hljs-string">&quot;throw&quot;</span>) {
+            <span class="hljs-keyword">throw</span> arg;
+            }
+
+            <span class="hljs-comment">// Be forgiving, per 25.3.3.3.3 of the spec:</span>
+            <span class="hljs-comment">// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume</span>
+            <span class="hljs-keyword">return</span> doneResult();
+        }
+
+        context.method = method;
+        context.arg = arg;
+
+        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+            <span class="hljs-keyword">var</span> delegate = context.delegate;
+            <span class="hljs-keyword">if</span> (delegate) {
+            <span class="hljs-keyword">var</span> delegateResult = maybeInvokeDelegate(delegate, context);
+            <span class="hljs-keyword">if</span> (delegateResult) {
+                <span class="hljs-keyword">if</span> (delegateResult === ContinueSentinel) <span class="hljs-keyword">continue</span>;
+                <span class="hljs-keyword">return</span> delegateResult;
+            }
+            }
+
+            <span class="hljs-keyword">if</span> (context.method === <span class="hljs-string">&quot;next&quot;</span>) {
+            <span class="hljs-comment">// Setting context._sent for legacy support of Babel&apos;s</span>
+            <span class="hljs-comment">// function.sent implementation.</span>
+            context.sent = context._sent = context.arg;
+
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (context.method === <span class="hljs-string">&quot;throw&quot;</span>) {
+            <span class="hljs-keyword">if</span> (state === GenStateSuspendedStart) {
+                state = GenStateCompleted;
+                <span class="hljs-keyword">throw</span> context.arg;
+            }
+
+            context.dispatchException(context.arg);
+
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (context.method === <span class="hljs-string">&quot;return&quot;</span>) {
+            context.abrupt(<span class="hljs-string">&quot;return&quot;</span>, context.arg);
+            }
+
+            state = GenStateExecuting;
+
+            <span class="hljs-keyword">var</span> record = tryCatch(innerFn, self, context);
+            <span class="hljs-keyword">if</span> (record.type === <span class="hljs-string">&quot;normal&quot;</span>) {
+            <span class="hljs-comment">// If an exception is thrown from innerFn, we leave state ===</span>
+            <span class="hljs-comment">// GenStateExecuting and loop back for another invocation.</span>
+            state = context.done
+                ? GenStateCompleted
+                : GenStateSuspendedYield;
+
+            <span class="hljs-keyword">if</span> (record.arg === ContinueSentinel) {
+                <span class="hljs-keyword">continue</span>;
+            }
+
+            <span class="hljs-keyword">return</span> {
+                value: record.arg,
+                done: context.done
+            };
+
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (record.type === <span class="hljs-string">&quot;throw&quot;</span>) {
+            state = GenStateCompleted;
+            <span class="hljs-comment">// Dispatch the exception by looping back around to the</span>
+            <span class="hljs-comment">// context.dispatchException(context.arg) call above.</span>
+            context.method = <span class="hljs-string">&quot;throw&quot;</span>;
+            context.arg = record.arg;
+            }
+        }
+        };
+    }
+
+    <span class="hljs-comment">// Call delegate.iterator[context.method](context.arg) and handle the</span>
+    <span class="hljs-comment">// result, either by returning a { value, done } result from the</span>
+    <span class="hljs-comment">// delegate iterator, or by modifying context.method and context.arg,</span>
+    <span class="hljs-comment">// setting context.delegate to null, and returning the ContinueSentinel.</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">maybeInvokeDelegate</span>(<span class="hljs-params">delegate, context</span>) </span>{
+        <span class="hljs-keyword">var</span> method = delegate.iterator[context.method];
+        <span class="hljs-keyword">if</span> (method === <span class="hljs-literal">undefined</span>) {
+        <span class="hljs-comment">// A .throw or .return when the delegate iterator has no .throw</span>
+        <span class="hljs-comment">// method always terminates the yield* loop.</span>
+        context.delegate = <span class="hljs-literal">null</span>;
+
+        <span class="hljs-keyword">if</span> (context.method === <span class="hljs-string">&quot;throw&quot;</span>) {
+            <span class="hljs-comment">// Note: [&quot;return&quot;] must be used for ES3 parsing compatibility.</span>
+            <span class="hljs-keyword">if</span> (delegate.iterator[<span class="hljs-string">&quot;return&quot;</span>]) {
+            <span class="hljs-comment">// If the delegate iterator has a return method, give it a</span>
+            <span class="hljs-comment">// chance to clean up.</span>
+            context.method = <span class="hljs-string">&quot;return&quot;</span>;
+            context.arg = <span class="hljs-literal">undefined</span>;
+            maybeInvokeDelegate(delegate, context);
+
+            <span class="hljs-keyword">if</span> (context.method === <span class="hljs-string">&quot;throw&quot;</span>) {
+                <span class="hljs-comment">// If maybeInvokeDelegate(context) changed context.method from</span>
+                <span class="hljs-comment">// &quot;return&quot; to &quot;throw&quot;, let that override the TypeError below.</span>
+                <span class="hljs-keyword">return</span> ContinueSentinel;
+            }
+            }
+
+            context.method = <span class="hljs-string">&quot;throw&quot;</span>;
+            context.arg = <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(
+            <span class="hljs-string">&quot;The iterator does not provide a &apos;throw&apos; method&quot;</span>);
+        }
+
+        <span class="hljs-keyword">return</span> ContinueSentinel;
+        }
+
+        <span class="hljs-keyword">var</span> record = tryCatch(method, delegate.iterator, context.arg);
+
+        <span class="hljs-keyword">if</span> (record.type === <span class="hljs-string">&quot;throw&quot;</span>) {
+        context.method = <span class="hljs-string">&quot;throw&quot;</span>;
+        context.arg = record.arg;
+        context.delegate = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span> ContinueSentinel;
+        }
+
+        <span class="hljs-keyword">var</span> info = record.arg;
+
+        <span class="hljs-keyword">if</span> (! info) {
+        context.method = <span class="hljs-string">&quot;throw&quot;</span>;
+        context.arg = <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">&quot;iterator result is not an object&quot;</span>);
+        context.delegate = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span> ContinueSentinel;
+        }
+
+        <span class="hljs-keyword">if</span> (info.done) {
+        <span class="hljs-comment">// Assign the result of the finished delegate to the temporary</span>
+        <span class="hljs-comment">// variable specified by delegate.resultName (see delegateYield).</span>
+        context[delegate.resultName] = info.value;
+
+        <span class="hljs-comment">// Resume execution at the desired location (see delegateYield).</span>
+        context.next = delegate.nextLoc;
+
+        <span class="hljs-comment">// If context.method was &quot;throw&quot; but the delegate handled the</span>
+        <span class="hljs-comment">// exception, let the outer generator proceed normally. If</span>
+        <span class="hljs-comment">// context.method was &quot;next&quot;, forget context.arg since it has been</span>
+        <span class="hljs-comment">// &quot;consumed&quot; by the delegate iterator. If context.method was</span>
+        <span class="hljs-comment">// &quot;return&quot;, allow the original .return call to continue in the</span>
+        <span class="hljs-comment">// outer generator.</span>
+        <span class="hljs-keyword">if</span> (context.method !== <span class="hljs-string">&quot;return&quot;</span>) {
+            context.method = <span class="hljs-string">&quot;next&quot;</span>;
+            context.arg = <span class="hljs-literal">undefined</span>;
+        }
+
+        } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// Re-yield the result returned by the delegate method.</span>
+        <span class="hljs-keyword">return</span> info;
+        }
+
+        <span class="hljs-comment">// The delegate iterator is finished, so forget it and continue with</span>
+        <span class="hljs-comment">// the outer generator.</span>
+        context.delegate = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span> ContinueSentinel;
+    }
+
+    <span class="hljs-comment">// Define Generator.prototype.{next,throw,return} in terms of the</span>
+    <span class="hljs-comment">// unified ._invoke helper method.</span>
+    defineIteratorMethods(Gp);
+
+    Gp[toStringTagSymbol] = <span class="hljs-string">&quot;Generator&quot;</span>;
+
+    <span class="hljs-comment">// A Generator should always return itself as the iterator object when the</span>
+    <span class="hljs-comment">// @@iterator function is called on it. Some browsers&apos; implementations of the</span>
+    <span class="hljs-comment">// iterator prototype chain incorrectly implement this, causing the Generator</span>
+    <span class="hljs-comment">// object to not be returned from this call. This ensures that doesn&apos;t happen.</span>
+    <span class="hljs-comment">// See https://github.com/facebook/regenerator/issues/274 for more details.</span>
+    Gp[iteratorSymbol] = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };
+
+    Gp.toString = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;[object Generator]&quot;</span>;
+    };
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pushTryEntry</span>(<span class="hljs-params">locs</span>) </span>{
+        <span class="hljs-keyword">var</span> entry = { tryLoc: locs[<span class="hljs-number">0</span>] };
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-number">1</span> <span class="hljs-keyword">in</span> locs) {
+        entry.catchLoc = locs[<span class="hljs-number">1</span>];
+        }
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-number">2</span> <span class="hljs-keyword">in</span> locs) {
+        entry.finallyLoc = locs[<span class="hljs-number">2</span>];
+        entry.afterLoc = locs[<span class="hljs-number">3</span>];
+        }
+
+        <span class="hljs-keyword">this</span>.tryEntries.push(entry);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resetTryEntry</span>(<span class="hljs-params">entry</span>) </span>{
+        <span class="hljs-keyword">var</span> record = entry.completion || {};
+        record.type = <span class="hljs-string">&quot;normal&quot;</span>;
+        <span class="hljs-keyword">delete</span> record.arg;
+        entry.completion = record;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Context</span>(<span class="hljs-params">tryLocsList</span>) </span>{
+        <span class="hljs-comment">// The root entry object (effectively a try statement without a catch</span>
+        <span class="hljs-comment">// or a finally block) gives us a place to store values thrown from</span>
+        <span class="hljs-comment">// locations where there is no enclosing try statement.</span>
+        <span class="hljs-keyword">this</span>.tryEntries = [{ tryLoc: <span class="hljs-string">&quot;root&quot;</span> }];
+        tryLocsList.forEach(pushTryEntry, <span class="hljs-keyword">this</span>);
+        <span class="hljs-keyword">this</span>.reset(<span class="hljs-literal">true</span>);
+    }
+
+    exports.keys = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">object</span>) </span>{
+        <span class="hljs-keyword">var</span> keys = [];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> object) {
+        keys.push(key);
+        }
+        keys.reverse();
+
+        <span class="hljs-comment">// Rather than returning an object with a next method, we keep</span>
+        <span class="hljs-comment">// things simple and return the next function itself.</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">while</span> (keys.length) {
+            <span class="hljs-keyword">var</span> key = keys.pop();
+            <span class="hljs-keyword">if</span> (key <span class="hljs-keyword">in</span> object) {
+            next.value = key;
+            next.done = <span class="hljs-literal">false</span>;
+            <span class="hljs-keyword">return</span> next;
+            }
+        }
+
+        <span class="hljs-comment">// To avoid creating an additional object, we just hang the .value</span>
+        <span class="hljs-comment">// and .done properties off the next function object itself. This</span>
+        <span class="hljs-comment">// also ensures that the minifier will not anonymize the function.</span>
+        next.done = <span class="hljs-literal">true</span>;
+        <span class="hljs-keyword">return</span> next;
+        };
+    };
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">values</span>(<span class="hljs-params">iterable</span>) </span>{
+        <span class="hljs-keyword">if</span> (iterable) {
+        <span class="hljs-keyword">var</span> iteratorMethod = iterable[iteratorSymbol];
+        <span class="hljs-keyword">if</span> (iteratorMethod) {
+            <span class="hljs-keyword">return</span> iteratorMethod.call(iterable);
+        }
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> iterable.next === <span class="hljs-string">&quot;function&quot;</span>) {
+            <span class="hljs-keyword">return</span> iterable;
+        }
+
+        <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">isNaN</span>(iterable.length)) {
+            <span class="hljs-keyword">var</span> i = <span class="hljs-number">-1</span>, next = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">while</span> (++i &lt; iterable.length) {
+                <span class="hljs-keyword">if</span> (hasOwn.call(iterable, i)) {
+                next.value = iterable[i];
+                next.done = <span class="hljs-literal">false</span>;
+                <span class="hljs-keyword">return</span> next;
+                }
+            }
+
+            next.value = <span class="hljs-literal">undefined</span>;
+            next.done = <span class="hljs-literal">true</span>;
+
+            <span class="hljs-keyword">return</span> next;
+            };
+
+            <span class="hljs-keyword">return</span> next.next = next;
+        }
+        }
+
+        <span class="hljs-comment">// Return an iterator with no values.</span>
+        <span class="hljs-keyword">return</span> { next: doneResult };
+    }
+    exports.values = values;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doneResult</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> { value: <span class="hljs-literal">undefined</span>, done: <span class="hljs-literal">true</span> };
+    }
+
+    Context.prototype = {
+        <span class="hljs-keyword">constructor</span>: Context,
+
+        reset: function(skipTempReset) {
+        <span class="hljs-keyword">this</span>.prev = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">this</span>.next = <span class="hljs-number">0</span>;
+        <span class="hljs-comment">// Resetting context._sent for legacy support of Babel&apos;s</span>
+        <span class="hljs-comment">// function.sent implementation.</span>
+        <span class="hljs-keyword">this</span>.sent = <span class="hljs-keyword">this</span>._sent = <span class="hljs-literal">undefined</span>;
+        <span class="hljs-keyword">this</span>.done = <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">this</span>.delegate = <span class="hljs-literal">null</span>;
+
+        <span class="hljs-keyword">this</span>.method = <span class="hljs-string">&quot;next&quot;</span>;
+        <span class="hljs-keyword">this</span>.arg = <span class="hljs-literal">undefined</span>;
+
+        <span class="hljs-keyword">this</span>.tryEntries.forEach(resetTryEntry);
+
+        <span class="hljs-keyword">if</span> (!skipTempReset) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> name <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>) {
+            <span class="hljs-comment">// Not sure about the optimal order of these conditions:</span>
+            <span class="hljs-keyword">if</span> (name.charAt(<span class="hljs-number">0</span>) === <span class="hljs-string">&quot;t&quot;</span> &amp;&amp;
+                hasOwn.call(<span class="hljs-keyword">this</span>, name) &amp;&amp;
+                !<span class="hljs-built_in">isNaN</span>(+name.slice(<span class="hljs-number">1</span>))) {
+                <span class="hljs-keyword">this</span>[name] = <span class="hljs-literal">undefined</span>;
+            }
+            }
+        }
+        },
+
+        stop: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">this</span>.done = <span class="hljs-literal">true</span>;
+
+        <span class="hljs-keyword">var</span> rootEntry = <span class="hljs-keyword">this</span>.tryEntries[<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">var</span> rootRecord = rootEntry.completion;
+        <span class="hljs-keyword">if</span> (rootRecord.type === <span class="hljs-string">&quot;throw&quot;</span>) {
+            <span class="hljs-keyword">throw</span> rootRecord.arg;
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.rval;
+        },
+
+        dispatchException: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exception</span>) </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.done) {
+            <span class="hljs-keyword">throw</span> exception;
+        }
+
+        <span class="hljs-keyword">var</span> context = <span class="hljs-keyword">this</span>;
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span>(<span class="hljs-params">loc, caught</span>) </span>{
+            record.type = <span class="hljs-string">&quot;throw&quot;</span>;
+            record.arg = exception;
+            context.next = loc;
+
+            <span class="hljs-keyword">if</span> (caught) {
+            <span class="hljs-comment">// If the dispatched exception was caught by a catch block,</span>
+            <span class="hljs-comment">// then let that catch block handle the exception normally.</span>
+            context.method = <span class="hljs-string">&quot;next&quot;</span>;
+            context.arg = <span class="hljs-literal">undefined</span>;
+            }
+
+            <span class="hljs-keyword">return</span> !! caught;
+        }
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-keyword">this</span>.tryEntries.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) {
+            <span class="hljs-keyword">var</span> entry = <span class="hljs-keyword">this</span>.tryEntries[i];
+            <span class="hljs-keyword">var</span> record = entry.completion;
+
+            <span class="hljs-keyword">if</span> (entry.tryLoc === <span class="hljs-string">&quot;root&quot;</span>) {
+            <span class="hljs-comment">// Exception thrown outside of any try block that could handle</span>
+            <span class="hljs-comment">// it, so set the completion value of the entire function to</span>
+            <span class="hljs-comment">// throw the exception.</span>
+            <span class="hljs-keyword">return</span> handle(<span class="hljs-string">&quot;end&quot;</span>);
+            }
+
+            <span class="hljs-keyword">if</span> (entry.tryLoc &lt;= <span class="hljs-keyword">this</span>.prev) {
+            <span class="hljs-keyword">var</span> hasCatch = hasOwn.call(entry, <span class="hljs-string">&quot;catchLoc&quot;</span>);
+            <span class="hljs-keyword">var</span> hasFinally = hasOwn.call(entry, <span class="hljs-string">&quot;finallyLoc&quot;</span>);
+
+            <span class="hljs-keyword">if</span> (hasCatch &amp;&amp; hasFinally) {
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.prev &lt; entry.catchLoc) {
+                <span class="hljs-keyword">return</span> handle(entry.catchLoc, <span class="hljs-literal">true</span>);
+                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.prev &lt; entry.finallyLoc) {
+                <span class="hljs-keyword">return</span> handle(entry.finallyLoc);
+                }
+
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (hasCatch) {
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.prev &lt; entry.catchLoc) {
+                <span class="hljs-keyword">return</span> handle(entry.catchLoc, <span class="hljs-literal">true</span>);
+                }
+
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (hasFinally) {
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.prev &lt; entry.finallyLoc) {
+                <span class="hljs-keyword">return</span> handle(entry.finallyLoc);
+                }
+
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;try statement without catch or finally&quot;</span>);
+            }
+            }
+        }
+        },
+
+        abrupt: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">type, arg</span>) </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-keyword">this</span>.tryEntries.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) {
+            <span class="hljs-keyword">var</span> entry = <span class="hljs-keyword">this</span>.tryEntries[i];
+            <span class="hljs-keyword">if</span> (entry.tryLoc &lt;= <span class="hljs-keyword">this</span>.prev &amp;&amp;
+                hasOwn.call(entry, <span class="hljs-string">&quot;finallyLoc&quot;</span>) &amp;&amp;
+                <span class="hljs-keyword">this</span>.prev &lt; entry.finallyLoc) {
+            <span class="hljs-keyword">var</span> finallyEntry = entry;
+            <span class="hljs-keyword">break</span>;
+            }
+        }
+
+        <span class="hljs-keyword">if</span> (finallyEntry &amp;&amp;
+            (type === <span class="hljs-string">&quot;break&quot;</span> ||
+            type === <span class="hljs-string">&quot;continue&quot;</span>) &amp;&amp;
+            finallyEntry.tryLoc &lt;= arg &amp;&amp;
+            arg &lt;= finallyEntry.finallyLoc) {
+            <span class="hljs-comment">// Ignore the finally entry if control is not jumping to a</span>
+            <span class="hljs-comment">// location outside the try/catch block.</span>
+            finallyEntry = <span class="hljs-literal">null</span>;
+        }
+
+        <span class="hljs-keyword">var</span> record = finallyEntry ? finallyEntry.completion : {};
+        record.type = type;
+        record.arg = arg;
+
+        <span class="hljs-keyword">if</span> (finallyEntry) {
+            <span class="hljs-keyword">this</span>.method = <span class="hljs-string">&quot;next&quot;</span>;
+            <span class="hljs-keyword">this</span>.next = finallyEntry.finallyLoc;
+            <span class="hljs-keyword">return</span> ContinueSentinel;
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.complete(record);
+        },
+
+        complete: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">record, afterLoc</span>) </span>{
+        <span class="hljs-keyword">if</span> (record.type === <span class="hljs-string">&quot;throw&quot;</span>) {
+            <span class="hljs-keyword">throw</span> record.arg;
+        }
+
+        <span class="hljs-keyword">if</span> (record.type === <span class="hljs-string">&quot;break&quot;</span> ||
+            record.type === <span class="hljs-string">&quot;continue&quot;</span>) {
+            <span class="hljs-keyword">this</span>.next = record.arg;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (record.type === <span class="hljs-string">&quot;return&quot;</span>) {
+            <span class="hljs-keyword">this</span>.rval = <span class="hljs-keyword">this</span>.arg = record.arg;
+            <span class="hljs-keyword">this</span>.method = <span class="hljs-string">&quot;return&quot;</span>;
+            <span class="hljs-keyword">this</span>.next = <span class="hljs-string">&quot;end&quot;</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (record.type === <span class="hljs-string">&quot;normal&quot;</span> &amp;&amp; afterLoc) {
+            <span class="hljs-keyword">this</span>.next = afterLoc;
+        }
+
+        <span class="hljs-keyword">return</span> ContinueSentinel;
+        },
+
+        finish: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">finallyLoc</span>) </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-keyword">this</span>.tryEntries.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) {
+            <span class="hljs-keyword">var</span> entry = <span class="hljs-keyword">this</span>.tryEntries[i];
+            <span class="hljs-keyword">if</span> (entry.finallyLoc === finallyLoc) {
+            <span class="hljs-keyword">this</span>.complete(entry.completion, entry.afterLoc);
+            resetTryEntry(entry);
+            <span class="hljs-keyword">return</span> ContinueSentinel;
+            }
+        }
+        },
+
+        <span class="hljs-string">&quot;catch&quot;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">tryLoc</span>) </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-keyword">this</span>.tryEntries.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) {
+            <span class="hljs-keyword">var</span> entry = <span class="hljs-keyword">this</span>.tryEntries[i];
+            <span class="hljs-keyword">if</span> (entry.tryLoc === tryLoc) {
+            <span class="hljs-keyword">var</span> record = entry.completion;
+            <span class="hljs-keyword">if</span> (record.type === <span class="hljs-string">&quot;throw&quot;</span>) {
+                <span class="hljs-keyword">var</span> thrown = record.arg;
+                resetTryEntry(entry);
+            }
+            <span class="hljs-keyword">return</span> thrown;
+            }
+        }
+
+        <span class="hljs-comment">// The context.catch method must only be called with a location</span>
+        <span class="hljs-comment">// argument that corresponds to a known catch block.</span>
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;illegal catch attempt&quot;</span>);
+        },
+
+        delegateYield: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">iterable, resultName, nextLoc</span>) </span>{
+        <span class="hljs-keyword">this</span>.delegate = {
+            iterator: values(iterable),
+            resultName: resultName,
+            nextLoc: nextLoc
+        };
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.method === <span class="hljs-string">&quot;next&quot;</span>) {
+            <span class="hljs-comment">// Deliberately forget the last sent value so that we don&apos;t</span>
+            <span class="hljs-comment">// accidentally pass it on to the delegate.</span>
+            <span class="hljs-keyword">this</span>.arg = <span class="hljs-literal">undefined</span>;
+        }
+
+        <span class="hljs-keyword">return</span> ContinueSentinel;
+        }
+    };
+
+    <span class="hljs-comment">// Regardless of whether this script is executing as a CommonJS module</span>
+    <span class="hljs-comment">// or not, return the runtime object so that we can declare the variable</span>
+    <span class="hljs-comment">// regeneratorRuntime in the outer scope, which allows this module to be</span>
+    <span class="hljs-comment">// injected easily by `bin/regenerator --include-runtime script.js`.</span>
+    <span class="hljs-keyword">return</span> exports;
+
+    }(
+    <span class="hljs-comment">// If this script is executing as a CommonJS module, use module.exports</span>
+    <span class="hljs-comment">// as the regeneratorRuntime namespace. Otherwise create a new empty</span>
+    <span class="hljs-comment">// object. Either way, the resulting object will be used to initialize</span>
+    <span class="hljs-comment">// the regeneratorRuntime variable at the top of this file.</span>
+    <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">&quot;object&quot;</span> ? <span class="hljs-built_in">module</span>.exports : {}
+    ));
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="wx_utils.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 小程序-常用工具类">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"小程序-实现async","level":"2.6.2.5","depth":3,"next":{"title":"Visual Studio Code","level":"2.7","depth":1,"ref":"","articles":[{"title":"vs 插件","level":"2.7.1","depth":2,"path":"src/md_file/vscode/vs_plugin.md","ref":"src/md_file/vscode/vs_plugin.md","articles":[]}]},"previous":{"title":"小程序-常用工具类","level":"2.6.2.4","depth":3,"path":"src/md_file/wx/smallProgram/wx_utils.md","ref":"src/md_file/wx/smallProgram/wx_utils.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/wx/smallProgram/wx_async.md","mtime":"2019-07-01T07:18:04.948Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-01T07:34:39.066Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
