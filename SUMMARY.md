@@ -43,12 +43,18 @@
 		+ [小程序-IM-获取最近联系人列表](src/md_file/wx/smallProgram/im_getRecentContact.md)
 		+ [小程序-常用工具类](src/md_file/wx/smallProgram/wx_utils.md)
 		+ [小程序-实现async](src/md_file/wx/smallProgram/wx_async.md)
+* cordova
+	+ [cordova 环境搭建](src/md_file/cordova/environment.md)
+	+ [JDK 下载与配置](src/md_file/cordova/jdk.md)
+	+ [Android SDK 下载与配置](src/md_file/cordova/androidSdk.md)
+	+ [gradle 下载与配置](src/md_file/cordova/gradle.md)
+	+ [cordova & vue-cli](src/md_file/cordova/gradle.md)
 * Visual Studio Code   
 	+ [vs 插件](src/md_file/vscode/vs_plugin.md)
 
 * MarkDown   
 	+ [markdown 基本语法](src/md_file/markdown/simple_grammar.md)
 
-* 常用
+* other
 	+ [Totop](src/md_file/demo/js/totop.md)
 	+ [js util](src/md_file/demo/js/js_utils.md)
