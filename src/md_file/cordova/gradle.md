@@ -37,4 +37,8 @@
 
 ---
 
-> 环境配置基本完成 > [cordova文档](https://cordova.apache.org/)
+**到这里 ，Apache Cordova 开发环境基本搭建完成，可以对 cordova 项目进行开发调试**
+
+> [cordova + vue-cli](./vueCli.md) 配置，开发单页混合应用    
+
+> [Apache Cordova](https://cordova.apache.org/);

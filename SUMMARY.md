@@ -30,6 +30,9 @@
 + Gitbook
 	+ [gitbook 安装](src/md_file/gitbook/gitbook.md)
 	+ [gitbook 插件](src/md_file/gitbook/plugin.md)
+	
+* MarkDown   
+	+ [markdown 基本语法](src/md_file/markdown/simple_grammar.md)
 
 * weChat	
 	+ H5
@@ -48,13 +51,11 @@
 	+ [JDK 下载与配置](src/md_file/cordova/jdk.md)
 	+ [Android SDK 下载与配置](src/md_file/cordova/androidSdk.md)
 	+ [gradle 下载与配置](src/md_file/cordova/gradle.md)
-	+ [cordova & vue-cli](src/md_file/cordova/gradle.md)
+	+ [cordova & vue-cli](src/md_file/cordova/vueCli.md)
+	+ [cordova config.xml](src/md_file/cordova/configXml.md)
 * Visual Studio Code   
 	+ [vs 插件](src/md_file/vscode/vs_plugin.md)
 
-* MarkDown   
-	+ [markdown 基本语法](src/md_file/markdown/simple_grammar.md)
-
 * other
 	+ [Totop](src/md_file/demo/js/totop.md)
-	+ [js util](src/md_file/demo/js/js_utils.md)
+	+ [js utils](src/md_file/demo/js/js_utils.md)
