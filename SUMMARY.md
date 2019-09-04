@@ -9,7 +9,8 @@
 	+ [vue-cli 搭建](src/md_file/vue/vue-cli_install.md)
 	+ [vuex 配置](src/md_file/vue/vue_vuex.md)
 	+ [vue scss 配置](src/md_file/vue/vue_scss.md)
-
++ react
+	+ [react 笔记](src/md_file/react/react.md)
 + Node
 	+ [nvm 管理node版本控制](src/md_file/node/nvm_install.md)
 	+ [nvm 设置全局公共依赖](src/md_file/node/nvm_public.md)
