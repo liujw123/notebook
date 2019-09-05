@@ -13,22 +13,6 @@
 	
 ```   
 
-
-####创建book.json并安装 创建一个空的文件夹，并在这个文件夹中创建一个book.json文件
-
-```
-
-	{
-		"gitbook":"2.x.x"
-	}
-	
-```
-
->表示安装gitbook的2.x.x版本，以后可以扩展此文件安装更多的gitbook插件
-	
-```
-	gitbook install
-```
 	
 ####创建README.md 和 SUMMARY.md
 ```
@@ -65,12 +49,60 @@
 ```
 	gitbook build
 ```
-	
-####更多命令帮助
+
+
+####创建一个book.json文件,想要添加gitbook配置或插件，只需要在book.json里面添加即可
+
++ 示例
+
+```json
+	{
+		"author": "Liujw",
+		"description": "This is a sample book created by gitbook",
+		"extension": null,
+		"generator": "site",
+		"isbn": "",
+		"links": {
+			"sharing": {
+				"all": null,
+				"facebook": null,
+				"google": null,
+				"twitter": null,
+				"weibo": null
+			},
+			"sidebar": {
+				
+			}
+		},
+		"output": null,
+		"pdf": {
+			"fontSize": 12,
+			"footerTemplate": null,
+			"headerTemplate": null,
+			"margin": {
+				"bottom": 36,
+				"left": 62,
+				"right": 62,
+				"top": 36
+			},
+			"pageNumbers": false,
+			"paperSize": "a4"
+		},
+		"plugins": [
+			
+		],
+		"title": "Sample GitBook",
+		"variables": {}
+	}
+```
+
+##### 保存book.json后执行命令安装
 
 ```
-	gitbook help
+	gitbook install
 ```
+
+
 	
 ####自由切换版本
 
@@ -78,22 +110,14 @@
 	gitbook ls-remote           //罗列出所有的版本号
 	gitbook fetch 2.1.0         //选择其中一个版本切换安装
 ```
+
+
 	
-####想要添加gitbook配置或插件，只需要在book.json里面添加即可
+####更多命令帮助
 
-+ 示例
 ```
-		{
-		"gitbook" : "2.x.x",
-		"title":"NoteBook",
-		"author":"Liujw",
-		"plugins":[
-			"sectionx",
-			"expandable-chapters"
-		]
-	}
+	gitbook help
 ```
-
 
 
 

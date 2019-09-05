@@ -5,6 +5,7 @@
 + javascript
 	+ [`__proto__`](src/md_file/javascript/proto.md)
 	+ [`prototype`](src/md_file/javascript/prototype.md)
+	+ [lazyMan](src/md_file/javascript/lazyMan.md)
 + vue
 	+ [vue-cli 搭建](src/md_file/vue/vue-cli_install.md)
 	+ [vuex 配置](src/md_file/vue/vue_vuex.md)

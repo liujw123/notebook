@@ -57,10 +57,10 @@
 
 ---
 
-#### 多维数组平铺
+#### [多维数组平铺](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
 
 ```js
-    let steamroller = function(arr){
+    let steamroller = arr =>{
         while(arr.some(item=>Array.isArray(item))){arr=[].concat(...arr)};
         return arr
     }
@@ -130,6 +130,28 @@
     // 手机号码
     const phoneReg = new RegExp(/^1(3|4|5|6|7|8|9)\d{9}$/);
 
+```
+
+---
+
+
+#### 动态修改htmlfontsize值
+
+```js
+    
+    (function (win,doc) {
+        function setSize() {
+            doc.documentElement.style.fontSize=document.documentElement.clientWidth+'px';
+        }
+        setSize();
+        win.addEventListener('resize',setSize,false)
+    })(window,document)
+
+
+    // scss 计算函数
+    @function r($px){
+        @return (1rem/750px)*$px;
+    }
 ```
 
 ---
