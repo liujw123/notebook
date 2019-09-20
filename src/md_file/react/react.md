@@ -130,6 +130,6 @@
 
 ### 高阶组件定义
 
-```
-a higher-order component is a function that takes a component and returns a new component.
-```
+>高阶组件就是一个函数，且该函数接受一个组件作为参数，并返回一个新的组件。
+
+
