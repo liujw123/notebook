@@ -1,6 +1,6 @@
-###Vue-cli
+### Vue-cli
 
-####检查 node 和 npm 版本
+#### 检查 node 和 npm 版本
 
 > 第一次安装 vue-cli 要检查 node 和 npm 的版本，**node 要 4.0 以上，npm 要 3.0 以上**（node 和 npm 的安装就略过了）。   
 
@@ -11,7 +11,7 @@
 ```
 
 
-####vue-cli安装
+#### vue-cli安装
 
 * 全局安装vue-cli
 
@@ -26,13 +26,13 @@
 	$ vue init webpack vue-cli-demo(projectname)
 ```
 
-###vue-cli选项    (图片下方解释)
+### vue-cli选项    (图片下方解释)
 
 ![vue-cli](../../assets/images/v-cli_select.png)
 	
 	
 	
-###命令含义	
+### 命令含义	
 
 
 | 命令 | 解释 |
@@ -55,4 +55,4 @@
 
 -------------------------------------------------------------------------------
 
->搞定，附上：[vue开发文档](https://cn.vuejs.org/v2/guide/)
+> [vue开发文档](https://cn.vuejs.org/v2/guide/)

@@ -118,3 +118,18 @@
 1. React 中没有“槽”（slot）这一概念的限制，你可以将任何东西作为 props 进行传递。
 
 2. Props 和组合为你提供了清晰而安全地定制组件外观和行为的灵活方式。注意：组件可以接受任意 props，包括基本数据类型，React 元素以及函数。
+
+
+### Functional Component 
+
+1. 單純地 render UI   
+
+2. 沒有內部狀態、沒有實作物件和 ref，沒有生命週期函數
+
+
+
+### 高阶组件定义
+
+```
+a higher-order component is a function that takes a component and returns a new component.
+```
