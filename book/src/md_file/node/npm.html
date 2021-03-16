@@ -864,6 +864,38 @@
                 <span>
             
                     
+                    git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../git/command.html">
+            
+                <a href="../git/command.html">
+            
+                    
+                    git 常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
                     other
             
                 </span>
@@ -873,7 +905,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.14.1" data-path="../demo/js/totop.html">
+        <li class="chapter " data-level="1.15.1" data-path="../demo/js/totop.html">
             
                 <a href="../demo/js/totop.html">
             
@@ -886,7 +918,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14.2" data-path="../demo/js/js_utils.html">
+        <li class="chapter " data-level="1.15.2" data-path="../demo/js/js_utils.html">
             
                 <a href="../demo/js/js_utils.html">
             
@@ -990,6 +1022,30 @@
     npm publish                 //&#x628A;&#x81EA;&#x5DF1;&#x7684;NPM&#x5305;&#x63A8;&#x9001;&#x5230;npmjs&#x5E02;&#x573A;&#x4E0A;
     npm unpublish &#x5305;&#x540D; --force   //&#x5220;&#x9664;&#x5728;npmjs&#x5E02;&#x573A;&#x4E0A;&#x7684;&#x5305;&#xFF0C;&#x4F46;&#x6CE8;&#x610F;&#xFF0C;&#x73B0;&#x5728;&#x5B98;&#x65B9;&#x89C4;&#x5B9A;&#x53EA;&#x80FD;&#x5220;&#x9664;24&#x5C0F;&#x65F6;&#x5185;&#x53D1;&#x5E03;&#x7684;&#x5305;
     npm search &lt;package_name&gt;   //&#x641C;&#x7D22;&#x5E02;&#x573A;&#x662F;&#x662F;&#x5426;&#x5B58;&#x5728;&#x67D0;&#x4E2A;&#x5305;&#x540D;
+
+
+    npm &#x67E5;&#x770B;&#x5B89;&#x88C5;&#x4E86;&#x54EA;&#x4E9B;&#x5305;
+        npm list --depth=0
+    &#x5168;&#x5C40;&#x5B89;&#x88C5;&#xFF1A;
+        npm install &lt;package-name&gt; -g
+
+    &#x5168;&#x5C40;&#x5220;&#x9664;&#xFF1A;
+        npm uninstall &lt;package-name&gt; -g
+
+    &#x5B89;&#x88C5;&#x6A21;&#x5757;&#x5305;&#xFF0C;&#x6A21;&#x5757;&#x5305;&#x7684;&#x4FE1;&#x606F;&#x4E0D;&#x4F1A;&#x5199;&#x5165;&#x5230;&#x9879;&#x76EE;&#x7684;package.json&#x6587;&#x4EF6;&#x4E2D;&#xFF1B;
+        npm install &lt;package-name&gt;
+
+    &#x5B89;&#x88C5;&#x6A21;&#x5757;&#x5305;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x6A21;&#x5757;&#x5305;&#x7684;&#x4FE1;&#x606F;&#x5199;&#x5165;&#x5230;&#x9879;&#x76EE;package.json&#x4E2D;&#x7684;dependencies&#x5BF9;&#x8C61;&#x4E2D;&#xFF1B;
+        npm install &lt;package-name&gt; --save
+
+    &#x5B89;&#x88C5;&#x6A21;&#x5757;&#x5305;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x6A21;&#x5757;&#x5305;&#x7684;&#x4FE1;&#x606F;&#x5199;&#x5165;&#x5230;&#x9879;&#x76EE;package.json&#x4E2D;&#x7684;devDependencies&#x5BF9;&#x8C61;&#x4E2D;&#xFF1B;
+        npm install &lt;package-name&gt; --save-dev
+
+    &#x5220;&#x9664;&#x6A21;&#x5757;&#x5305;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x6A21;&#x5757;&#x5305;&#x4FE1;&#x606F;&#x4ECE;&#x9879;&#x76EE;package.json&#x7684;dependencies&#x5BF9;&#x8C61;&#x4E2D;&#x5220;&#x9664;&#xFF1B;
+        npm uninstall &lt;package-name&gt; --save
+
+    &#x5220;&#x9664;&#x6A21;&#x5757;&#x5305;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x6A21;&#x5757;&#x5305;&#x4FE1;&#x606F;&#x4ECE;&#x9879;&#x76EE;package.json&#x7684;devDependencies&#x5BF9;&#x8C61;&#x4E2D;&#x5220;&#x9664;&#xFF1B;
+        npm uninstall &lt;package-name&gt; --save-dev
 </code></pre>
 <h4 id="-save-dev-&#x4E0E;---save&#x533A;&#x522B;">--save-dev &#x4E0E; --save&#x533A;&#x522B;</h4>
 <blockquote>
@@ -1077,7 +1133,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"npm 使用","level":"1.5.3","depth":2,"next":{"title":"cnpm 安装","level":"1.5.4","depth":2,"path":"src/md_file/node/cnpm_install.md","ref":"src/md_file/node/cnpm_install.md","articles":[]},"previous":{"title":"nvm 设置全局公共依赖","level":"1.5.2","depth":2,"path":"src/md_file/node/nvm_public.md","ref":"src/md_file/node/nvm_public.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/node/npm.md","mtime":"2018-08-08T02:42:34.882Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-20T10:14:14.279Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"npm 使用","level":"1.5.3","depth":2,"next":{"title":"cnpm 安装","level":"1.5.4","depth":2,"path":"src/md_file/node/cnpm_install.md","ref":"src/md_file/node/cnpm_install.md","articles":[]},"previous":{"title":"nvm 设置全局公共依赖","level":"1.5.2","depth":2,"path":"src/md_file/node/nvm_public.md","ref":"src/md_file/node/nvm_public.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/node/npm.md","mtime":"2021-03-16T06:31:50.931Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-16T06:43:40.578Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

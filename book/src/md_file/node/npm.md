@@ -41,6 +41,31 @@
 	npm unpublish 包名 --force   //删除在npmjs市场上的包，但注意，现在官方规定只能删除24小时内发布的包
 	npm search <package_name>   //搜索市场是是否存在某个包名
 
+
+	npm 查看安装了哪些包
+		npm list --depth=0
+	全局安装：
+		npm install <package-name> -g
+
+	全局删除：
+		npm uninstall <package-name> -g
+
+	安装模块包，模块包的信息不会写入到项目的package.json文件中；
+		npm install <package-name>
+
+	安装模块包，并且将模块包的信息写入到项目package.json中的dependencies对象中；
+		npm install <package-name> --save
+
+	安装模块包，并且将模块包的信息写入到项目package.json中的devDependencies对象中；
+		npm install <package-name> --save-dev
+
+	删除模块包，并且将对应的模块包信息从项目package.json的dependencies对象中删除；
+		npm uninstall <package-name> --save
+
+	删除模块包，并且将对应的模块包信息从项目package.json的devDependencies对象中删除；
+		npm uninstall <package-name> --save-dev
+
+
 ```
 
 

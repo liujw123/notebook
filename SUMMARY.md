@@ -57,7 +57,8 @@
 	+ [cordova config.xml](src/md_file/cordova/configXml.md)
 * Visual Studio Code   
 	+ [vs 插件](src/md_file/vscode/vs_plugin.md)
-
+* git   
+	+ [git 常用命令](src/md_file/git/command.md)
 * other
 	+ [Totop](src/md_file/demo/js/totop.md)
 	+ [js utils](src/md_file/demo/js/js_utils.md)
