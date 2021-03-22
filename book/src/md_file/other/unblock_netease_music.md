@@ -1,6 +1,6 @@
 # 代理网易音乐
 
-### 1. [安装node.js](./nvm_install.md)   
+### 1. [安装node.js](../node/nvm_install.md)   
 
 ---
 

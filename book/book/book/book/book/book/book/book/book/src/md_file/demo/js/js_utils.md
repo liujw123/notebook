@@ -155,3 +155,16 @@
 ```
 
 ---
+
+
+#### 处理iOS 微信客户端6.7.4 键盘收起页面未下移bug
+
+
+```js
+    (/iphone|ipod|ipad/i.test(navigator.appVersion)) && document.addEventListener('blur', e=> {
+        // 这里加了个类型判断，因为a等元素也会触发blur事件
+        ['input', 'textarea'].includes(e.target.localName) && document.body.scrollIntoView(false)
+    }, true)
+```
+
+

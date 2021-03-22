@@ -176,12 +176,77 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../../javascript/lazyMan.html">
+        <li class="chapter " data-level="1.2.3" data-path="../../javascript/inherit.html">
+            
+                <a href="../../javascript/inherit.html">
+            
+                    
+                    原型继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../javascript/lazyMan.html">
             
                 <a href="../../javascript/lazyMan.html">
             
                     
                     lazyMan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../javascript/treeTraversal.html">
+            
+                <a href="../../javascript/treeTraversal.html">
+            
+                    
+                    多叉树遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../javascript/debounce&throttle.html">
+            
+                <a href="../../javascript/debounce&throttle.html">
+            
+                    
+                    防抖&节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../javascript/eventLoop.html">
+            
+                <a href="../../javascript/eventLoop.html">
+            
+                    
+                    任务队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../javascript/es6_promise.html">
+            
+                <a href="../../javascript/es6_promise.html">
+            
+                    
+                    Es6_Promise
             
                 </a>
             
@@ -395,6 +460,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6.3" data-path="../../scss/public.html">
+            
+                <a href="../../scss/public.html">
+            
+                    
+                    公共样式
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -465,6 +543,19 @@
             
                     
                     gulp 文件路径匹配规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../gulp/demo/scss_file.html">
+            
+                <a href="../../gulp/demo/scss_file.html">
+            
+                    
+                    scss文件监听demo
             
                 </a>
             
@@ -894,7 +985,7 @@
                 <span>
             
                     
-                    other
+                    demo
             
                 </span>
             
@@ -903,7 +994,53 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.15.1" data-path="totop.html">
+        <li class="chapter " data-level="1.15.1" >
+            
+                <span>
+            
+                    
+                    css
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1.1" data-path="../css/adaptive_square.html">
+            
+                <a href="../css/adaptive_square.html">
+            
+                    
+                    自适应正方形
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" >
+            
+                <span>
+            
+                    
+                    js
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.2.1" data-path="totop.html">
             
                 <a href="totop.html">
             
@@ -916,12 +1053,49 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.15.2" data-path="js_utils.html">
+        <li class="chapter active" data-level="1.15.2.2" data-path="js_utils.html">
             
                 <a href="js_utils.html">
             
                     
                     js utils
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    other
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../../other/unblock_netease_music.html">
+            
+                <a href="../../other/unblock_netease_music.html">
+            
+                    
+                    unlock music
             
                 </a>
             
@@ -1105,6 +1279,62 @@
         [<span class="hljs-string">&apos;input&apos;</span>, <span class="hljs-string">&apos;textarea&apos;</span>].includes(e.target.localName) &amp;&amp; <span class="hljs-built_in">document</span>.body.scrollIntoView(<span class="hljs-literal">false</span>)
     }, <span class="hljs-literal">true</span>)
 </code></pre>
+<hr>
+<h4 id="&#x5224;&#x65AD;&#x662F;&#x5426;&#x540C;&#x4E00;&#x5929;">&#x5224;&#x65AD;&#x662F;&#x5426;&#x540C;&#x4E00;&#x5929;</h4>
+<pre><code class="lang-js">
+    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">isSameDay</span>(<span class="hljs-params">timeStampA, timeStampB</span>) </span>{
+        <span class="hljs-keyword">let</span> dateA = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(timeStampA);
+        <span class="hljs-keyword">let</span> dateB = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(timeStampB);
+        <span class="hljs-keyword">return</span> (dateA.setHours(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>) == dateB.setHours(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>));
+    }
+</code></pre>
+<hr>
+<h4 id="&#x83B7;&#x53D6;&#x8303;&#x56F4;&#x5185;&#x968F;&#x673A;&#x6570;">&#x83B7;&#x53D6;&#x8303;&#x56F4;&#x5185;&#x968F;&#x673A;&#x6570;</h4>
+<pre><code class="lang-js">
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandom</span>(<span class="hljs-params">min, max</span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random() * (max - min)) + min;
+    }
+</code></pre>
+<hr>
+<h4 id="&#x83B7;&#x53D6;&#x8303;&#x56F4;&#x5185;&#x968F;&#x673A;&#x6570;">&#x83B7;&#x53D6;&#x8303;&#x56F4;&#x5185;&#x968F;&#x673A;&#x6570;</h4>
+<pre><code class="lang-js">
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandom</span>(<span class="hljs-params">min, max</span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random() * (max - min)) + min;
+    }
+</code></pre>
+<h4 id="&#x683C;&#x5F0F;&#x5316;&#x65E5;&#x671F;">&#x683C;&#x5F0F;&#x5316;&#x65E5;&#x671F;</h4>
+<pre><code class="lang-js">
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> formatTime = date =&gt; {
+        <span class="hljs-keyword">const</span> year = date.getFullYear()
+        <span class="hljs-keyword">const</span> month = date.getMonth() + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">const</span> day = date.getDate()
+        <span class="hljs-keyword">const</span> hour = date.getHours()
+        <span class="hljs-keyword">const</span> minute = date.getMinutes()
+        <span class="hljs-keyword">const</span> second = date.getSeconds()
+
+        <span class="hljs-keyword">return</span> [year, month, day].map(formatNumber).join(<span class="hljs-string">&apos;-&apos;</span>) + <span class="hljs-string">&apos; &apos;</span> + [hour, minute, second].map(formatNumber).join(<span class="hljs-string">&apos;:&apos;</span>)
+    }
+
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> formatDate = ({ date= <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(), partition= <span class="hljs-string">&apos;-&apos;</span> }) =&gt; {
+        <span class="hljs-keyword">let</span> _date;
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> (date) === <span class="hljs-string">&apos;string&apos;</span>&amp;&amp;date.indexOf(<span class="hljs-string">&apos;-&apos;</span>)!=<span class="hljs-number">-1</span>){
+            _date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(date.replace(<span class="hljs-regexp">/\-/g</span>,<span class="hljs-string">&apos;/&apos;</span>))
+        }<span class="hljs-keyword">else</span>{
+            _date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(date)
+        }
+        <span class="hljs-keyword">const</span> year = _date.getFullYear();
+        <span class="hljs-keyword">const</span> month = _date.getMonth() + <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">const</span> day = _date.getDate();
+
+        <span class="hljs-keyword">if</span>(partition == <span class="hljs-string">&apos;zh&apos;</span>)<span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${year}</span>&#x5E74;<span class="hljs-subst">${month}</span>&#x6708;<span class="hljs-subst">${day}</span>&#x65E5;`</span>
+        <span class="hljs-keyword">return</span> [year, month, day].map(formatNumber).join(partition);
+    }
+
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> formatNumber = n =&gt; {
+        n = n.toString()
+        <span class="hljs-keyword">return</span> n[<span class="hljs-number">1</span>] ? n : <span class="hljs-string">&apos;0&apos;</span> + n
+    }
+</code></pre>
 
                                 
                                 </section>
@@ -1144,7 +1374,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"js utils","level":"1.15.2","depth":2,"previous":{"title":"Totop","level":"1.15.1","depth":2,"path":"src/md_file/demo/js/totop.md","ref":"src/md_file/demo/js/totop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/demo/js/js_utils.md","mtime":"2019-08-30T05:27:04.232Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-16T06:43:40.578Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"js utils","level":"1.15.2.2","depth":3,"next":{"title":"other","level":"1.16","depth":1,"ref":"","articles":[{"title":"unlock music","level":"1.16.1","depth":2,"path":"src/md_file/other/unblock_netease_music.md","ref":"src/md_file/other/unblock_netease_music.md","articles":[]}]},"previous":{"title":"Totop","level":"1.15.2.1","depth":3,"path":"src/md_file/demo/js/totop.md","ref":"src/md_file/demo/js/totop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/demo/js/js_utils.md","mtime":"2021-03-16T09:26:08.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-22T03:00:33.653Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

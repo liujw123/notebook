@@ -75,8 +75,10 @@
 --- 
 ### 坑
 
-1. url处理/兼容ios。
+1. **config注入尽量避免并发，会出现兼容问题。**
 2. 每次url变化之后都需要重新微信jssdk授权，要用到的页面，mounted 调用config注册sdk。
-3. 设置分享，链接中存在中文，进行encodeURIComponent()，安卓手机会自动encodeURIComponent，ios不会。 
+3. ios签名入参的时候url路径不能含有'#'hash部分。
+4. 设置分享，链接中存在中文，进行encodeURIComponent()，安卓手机会自动encodeURIComponent，ios不会。 
+5. 注意大小写nonceStr。
 
 
