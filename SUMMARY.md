@@ -5,7 +5,12 @@
 + javascript
 	+ [`__proto__`](src/md_file/javascript/proto.md)
 	+ [`prototype`](src/md_file/javascript/prototype.md)
+	+ [原型继承](src/md_file/javascript/inherit.md)
 	+ [lazyMan](src/md_file/javascript/lazyMan.md)
+	+ [多叉树遍历](src/md_file/javascript/treeTraversal.md)
+	+ [防抖&节流](src/md_file/javascript/debounce&throttle.md)
+	+ [任务队列](src/md_file/javascript/eventLoop.md)
+	+ [Es6_Promise](src/md_file/javascript/es6_promise.md)
 
 + vue
 	+ [vue-cli 搭建](src/md_file/vue/vue-cli_install.md)
@@ -77,3 +82,6 @@
 		+ [Totop](src/md_file/demo/js/totop.md)
 		+ [js utils](src/md_file/demo/js/js_utils.md)
 		
+* other
+
+	+ [unlock music](src/md_file/other/unblock_netease_music.md)

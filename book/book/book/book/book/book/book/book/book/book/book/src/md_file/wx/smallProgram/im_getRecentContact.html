@@ -82,6 +82,8 @@
     <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="wx_utils.html" />
+    
     
     <link rel="prev" href="im_login.html" />
     
@@ -480,7 +482,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.6.2.1" data-path="im_login.html">
+        <li class="chapter " data-level="2.6.2.1" data-path="im_getsign.html">
+            
+                <a href="im_getsign.html">
+            
+                    
+                    小程序-IM-签名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="im_login.html">
             
                 <a href="im_login.html">
             
@@ -493,12 +508,38 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.6.2.2" data-path="im_getRecentContact.html">
+        <li class="chapter active" data-level="2.6.2.3" data-path="im_getRecentContact.html">
             
                 <a href="im_getRecentContact.html">
             
                     
                     小程序-IM-获取最近联系人列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.4" data-path="wx_utils.html">
+            
+                <a href="wx_utils.html">
+            
+                    
+                    小程序-常用工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.5" data-path="wx_async.html">
+            
+                <a href="wx_async.html">
+            
+                    
+                    小程序-实现async
             
                 </a>
             
@@ -681,46 +722,40 @@
 <li>&#x5904;&#x7406;&#x6570;&#x636E;&#x683C;&#x5F0F;</li>
 <li>&#x8D4B;&#x503C;data&#xFF0C;&#x663E;&#x793A;&#x5230;&#x754C;&#x9762;</li>
 </ol>
-<pre><code class="lang-js">    <span class="hljs-keyword">let</span> imhandler = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../../utils/im_handler.js&apos;</span>); <span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x662F;&#x6240;&#x6709; im &#x4E8B;&#x4EF6;&#x7684; js</span>
+<pre><code class="lang-js">
+    <span class="hljs-keyword">let</span> imhandler = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../../utils/im_handler.js&apos;</span>); <span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x662F;&#x6240;&#x6709; im &#x4E8B;&#x4EF6;&#x7684; js</span>
     <span class="hljs-keyword">import</span> <span class="hljs-built_in">Promise</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../utils/promise.js&apos;</span>; <span class="hljs-comment">// &#x76EE;&#x524D;&#x5C0F;&#x7A0B;&#x5E8F;&#x539F;&#x751F;&#x53D6;&#x6D88;&#x652F;&#x6301;Promise</span>
     <span class="hljs-keyword">import</span> regeneratorRuntime, { <span class="hljs-keyword">async</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../utils/regenerator-runtime.js&apos;</span>  <span class="hljs-comment">//async /&#x5C0F;&#x7A0B;&#x5E8F;&#x539F;&#x751F;&#x4E0D;&#x652F;&#x6301;async</span>
     <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;</span>
     <span class="hljs-keyword">const</span> app = getApp()
 
     onShow(){
-        app.initImParams(()=&gt;{ <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7B7E;&#x540D;,&#x521D;&#x59CB;&#x5316;&#x767B;&#x9646;&#x6240;&#x9700;&#x7684;&#x6570;&#x636E;&#x6570;&#x636E;</span>
-            imhandler.login({   <span class="hljs-comment">// &#x8C03;&#x7528;im&#x767B;&#x9646;</span>
-                loginInfo:app.data.im,
-                MsgNotifyCallBack:<span class="hljs-keyword">this</span>.formatContactList,  <span class="hljs-comment">// &#x6709;&#x65B0;&#x6D88;&#x606F;&#x65F6;&#xFF0C;&#x89E6;&#x53D1;&#x7684;&#x56DE;&#x8C03;</span>
-            })
-            .then(<span class="hljs-keyword">this</span>.formatContactList, <span class="hljs-comment">// &#x52A0;&#x8F7D;&#x6570;&#x636E;&#xFF0C;&#x5904;&#x7406;&#x6570;&#x636E;</span>
-            err=&gt;{
-                <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&apos;im &#x767B;&#x9646;&#x5931;&#x8D25;--&gt;&apos;</span>,err)
-            })
-            .catch(err=&gt;{
-                <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&apos;&#x52A0;&#x8F7D;&#x6700;&#x8FD1;&#x8054;&#x7CFB;&#x4EBA;&#x5931;&#x8D25;---&gt;&apos;</span>,err)
-                util.showNone(<span class="hljs-string">&apos;&#x52A0;&#x8F7D;&#x6700;&#x8FD1;&#x8054;&#x7CFB;&#x4EBA;&#x5931;&#x8D25;&apos;</span>);
-            })
-        }),
+        app.initImParams()
+        .then(()=&gt;imhandler.login({
+            loginInfo:app.data.im,
+            MsgNotifyCallBack:<span class="hljs-keyword">this</span>.formatContactList, <span class="hljs-comment">// &#x76D1;&#x542C;&#x65B0;&#x6D88;&#x606F;&#xFF0C;&#x8C03;&#x7528;&#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x8054;&#x7CFB;&#x4EBA;</span>
+        }),err=&gt;<span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&apos;im &#x767B;&#x9646;&#x5931;&#x8D25;--&gt;&apos;</span>,err))
+        .then(<span class="hljs-keyword">this</span>.formatContactList) <span class="hljs-comment">// &#x767B;&#x9646;&#x5B8C;&#x6210;&#xFF0C;&#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x8054;&#x7CFB;&#x4EBA;&#x5217;&#x8868;</span>
+        .catch(err=&gt;<span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&apos;&#x52A0;&#x8F7D;&#x6700;&#x8FD1;&#x8054;&#x7CFB;&#x4EBA;&#x5931;&#x8D25;--&gt;&apos;</span>,err))
     },
     <span class="hljs-comment">// &#x5904;&#x7406;&#x6700;&#x8FD1;&#x8054;&#x7CFB;&#x4EBA;&#x5217;&#x8868;&#x4FE1;&#x606F;&#x3001;&#x683C;&#x5F0F;&#x5316;</span>
     <span class="hljs-keyword">async</span> formatContactList(){
         <span class="hljs-keyword">try</span>{
-            <span class="hljs-keyword">let</span> contactArr = <span class="hljs-keyword">await</span> <span class="hljs-built_in">Promise</span>.all([<span class="hljs-keyword">this</span>.getRecentContactList(),<span class="hljs-keyword">this</span>.getConversationList()]);
-            <span class="hljs-keyword">let</span> contactList = contactArr[<span class="hljs-number">0</span>].map(e=&gt;{
-                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i <span class="hljs-keyword">in</span> contactArr[<span class="hljs-number">1</span>]){
-                    <span class="hljs-keyword">var</span> session = contactArr[<span class="hljs-number">1</span>][i]
+            <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(rs=&gt;setTimeout(rs,<span class="hljs-number">500</span>)) <span class="hljs-comment">// &#x9632;&#x6B62;&#x65B0;&#x7528;&#x6237;&#x6CA1;&#x6709;&#x51E0;&#x65F6;&#x66F4;&#x65B0;&#x5230;im&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5BFC;&#x81F4;&#x83B7;&#x53D6;&#x5931;&#x8D25;</span>
+            <span class="hljs-keyword">let</span> recentContactList = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.getRecentContactList();
+            <span class="hljs-keyword">let</span> conversationList = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.getConversationList();
+            <span class="hljs-comment">// &#x6574;&#x5408;&#x5217;&#x8868;</span>
+            <span class="hljs-keyword">let</span> contactList = recentContactList.map(e=&gt;{
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i <span class="hljs-keyword">in</span> conversationList){
+                    <span class="hljs-keyword">var</span> session = conversationList[i]
                     <span class="hljs-keyword">if</span> (session.unread() &gt; <span class="hljs-number">0</span>&amp;&amp;e.friendId === session.id())e.unreadMsgCount = session.unread();
                 }
                 <span class="hljs-keyword">return</span> e
             });
-
-
             <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x8054;&#x7CFB;&#x4EBA;&#x5217;&#x8868;</span>
             <span class="hljs-keyword">this</span>.setData({
                 contactList: contactList
             })
-            <span class="hljs-comment">// contactList &#x6700;&#x7EC8;&#x6240;&#x9700;&#x8981;&#x7684;&#x6700;&#x8FD1;&#x8054;&#x7CFB;&#x4EBA;&#x5217;&#x8868;&#x6570;&#x636E;</span>
         }<span class="hljs-keyword">catch</span>(err){
             <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&apos;&#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x8054;&#x7CFB;&#x4EBA;&#x5217;&#x8868;&#x3001;&#x672A;&#x8BFB;&#x6D88;&#x606F;&#x5931;&#x8D25;---&gt;&apos;</span>,err);
         }
@@ -800,10 +835,14 @@
 
             
                 
-                <a href="im_login.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 小程序-IM-登陆">
+                <a href="im_login.html" class="navigation navigation-prev " aria-label="Previous page: 小程序-IM-登陆">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="wx_utils.html" class="navigation navigation-next " aria-label="Next page: 小程序-常用工具类">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -812,7 +851,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"小程序-IM-获取最近联系人列表","level":"2.6.2.2","depth":3,"next":{"title":"Visual Studio Code","level":"2.7","depth":1,"ref":"","articles":[{"title":"vs 插件","level":"2.7.1","depth":2,"path":"src/md_file/vscode/vs_plugin.md","ref":"src/md_file/vscode/vs_plugin.md","articles":[]}]},"previous":{"title":"小程序-IM-登陆","level":"2.6.2.1","depth":3,"path":"src/md_file/wx/smallProgram/im_login.md","ref":"src/md_file/wx/smallProgram/im_login.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/wx/smallProgram/im_getRecentContact.md","mtime":"2019-04-26T10:00:16.758Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-26T10:03:54.833Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"小程序-IM-获取最近联系人列表","level":"2.6.2.3","depth":3,"next":{"title":"小程序-常用工具类","level":"2.6.2.4","depth":3,"path":"src/md_file/wx/smallProgram/wx_utils.md","ref":"src/md_file/wx/smallProgram/wx_utils.md","articles":[]},"previous":{"title":"小程序-IM-登陆","level":"2.6.2.2","depth":3,"path":"src/md_file/wx/smallProgram/im_login.md","ref":"src/md_file/wx/smallProgram/im_login.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","github","splitter","sectionx","theme-comscore","expandable-chapters","3-ba","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/liujw123"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"liujw123","repo":"notebook","type":["star"],"size":"small"}]},"3-ba":{"configuration":"auto","token":"eeda89358034bd7683f0aaecb5bad298"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Liujw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Note","gitbook":">=2.0.0","description":"This is such a great book!"},"file":{"path":"src/md_file/wx/smallProgram/im_getRecentContact.md","mtime":"2019-05-21T08:50:49.462Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-01T07:34:39.066Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

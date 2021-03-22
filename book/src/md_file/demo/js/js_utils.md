@@ -168,3 +168,84 @@
 ```
 
 
+---
+
+
+#### 判断是否同一天   
+
+```js
+
+    export function  isSameDay(timeStampA, timeStampB) {
+        let dateA = new Date(timeStampA);
+        let dateB = new Date(timeStampB);
+        return (dateA.setHours(0, 0, 0, 0) == dateB.setHours(0, 0, 0, 0));
+    }
+
+```
+
+---
+
+
+#### 获取范围内随机数   
+
+```js
+
+    function getRandom(min, max) {
+        return Math.round(Math.random() * (max - min)) + min;
+    }
+
+```
+
+---
+
+
+#### 获取范围内随机数   
+
+```js
+
+    function getRandom(min, max) {
+        return Math.round(Math.random() * (max - min)) + min;
+    }
+
+```
+
+
+
+
+#### 格式化日期
+
+```js
+    
+    export const formatTime = date => {
+        const year = date.getFullYear()
+        const month = date.getMonth() + 1
+        const day = date.getDate()
+        const hour = date.getHours()
+        const minute = date.getMinutes()
+        const second = date.getSeconds()
+
+        return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+    }
+
+    export const formatDate = ({ date= new Date(), partition= '-' }) => {
+        let _date;
+        if(typeof (date) === 'string'&&date.indexOf('-')!=-1){
+            _date = new Date(date.replace(/\-/g,'/'))
+        }else{
+            _date = new Date(date)
+        }
+        const year = _date.getFullYear();
+        const month = _date.getMonth() + 1;
+        const day = _date.getDate();
+        
+        if(partition == 'zh')return `${year}年${month}月${day}日`
+        return [year, month, day].map(formatNumber).join(partition);
+    }
+
+    export const formatNumber = n => {
+        n = n.toString()
+        return n[1] ? n : '0' + n
+    }
+
+
+```

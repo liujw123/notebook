@@ -6,9 +6,16 @@
 
 1. 在需要设置的页面[配置注入 js-sdk](./jssdk_config.md)
 2. 在需要设置的页面，调用分享设置方法。
-3. 设置是否成功看心情。。。
 ---
 ```js   
+
+SDK_config([
+    'updateAppMessageShareData',
+    'updateTimelineShareData',
+    'onMenuShareTimeline',          // 以下两个是如果不注入配置，则安卓设置分享失败
+    'onMenuShareAppMessage'
+])
+
 
 // 设置点击菜单分享 方法封装 
 let wx_on_menu_share = ({
@@ -33,8 +40,8 @@ let wx_on_menu_share = ({
             desc,                   // 分享描述
             imgUrl,                 // 分享图标
             link:shareLink + routePath + shareQuery,         // 分享链接
-            type:'link',            // 分享类型,music、video或link，不填默认为link  (貌似可以兼容部分华为分享参数携带失败///单分享链接，配置不影响)
-            dataUrl:shareLink,      // 如果type是music或video，则要提供数据链接，默认为空 (貌似可以兼容部分华为分享参数携带失败///单分享链接，配置不影响)
+            type:'link',            // 分享类型,music、video或link，不填默认为link  
+            dataUrl:shareLink,      // 如果type是music或video，则要提供数据链接，默认为空 
             success: function () {
                 console.warn('分享设置成功，设置连接为-->'+shareLink);  
             },
@@ -43,15 +50,17 @@ let wx_on_menu_share = ({
             }
         }
 
-        // 文档说将废弃 ， 没有废弃。。。 updateAppMessageShareData/updateTimelineShareData 单独配置这两个，分享设置大部分手机不成功。。。
-        // 全部api堆上就对了。。。
+        // 文档说将废弃 ， 没有废弃。。。 updateAppMessageShareData/updateTimelineShareData 单独配置这两个，分享设置安卓大部分手机不成功。。。
 
+        // ios 仅配置前两个成功设置
         wx.updateAppMessageShareData(shareObj);     //   自定义“分享给朋友”及“分享到QQ”按钮的分享内容（1.4.0）
         wx.updateTimelineShareData(shareObj);       //   自定义“分享到朋友圈”及“分享到QQ空间”按钮的分享内容（1.4.0）
+        // 兼容安卓，需要把下面加上
         wx.onMenuShareTimeline(shareObj);           //   获取“分享到朋友圈”按钮点击状态及自定义分享内容接口（即将废弃）
-        wx.onMenuShareQQ(shareObj);                 //   获取“分享到QQ”按钮点击状态及自定义分享内容接口（即将废弃）
-        wx.onMenuShareWeibo(shareObj);              //   获取“分享到腾讯微博”按钮点击状态及自定义分享内容接口
-        wx.onMenuShareQZone(shareObj);              //   获取“分享到QQ空间”按钮点击状态及自定义分享内容接口（即将废弃）
+        wx.onMenuShareAppMessage(shareObj);         //   获取“分享给朋友”按钮点击状态及自定义分享内容接口（即将废弃）
+        // wx.onMenuShareQQ(shareObj);              //   获取“分享到QQ”按钮点击状态及自定义分享内容接口（即将废弃）
+        // wx.onMenuShareWeibo(shareObj);              //   获取“分享到腾讯微博”按钮点击状态及自定义分享内容接口
+        // wx.onMenuShareQZone(shareObj);              //   获取“分享到QQ空间”按钮点击状态及自定义分享内容接口（即将废弃）
     })
 }
 
@@ -59,7 +68,7 @@ let wx_on_menu_share = ({
 
 ---
 
-### 坑
+### 注意
 1. **设置分享，链接中存在中文，进行encodeURIComponent()，安卓手机会自动encodeURIComponent，ios不会。**
-2. **不知道是否 vue hash 模式问题，分享设置链接会出现设置失败，标题等其他信息设置成功，只有链接失败。（华为出现几率大），，，未找到解决方案**
-3. **若全局配置统一分享可在app.vue注入设置。（个别差异分享，要在页面卸载时，重新设置全局分享参数）**
+2. **单页spa，只要在某一页面设置分享，设置后，在没有重新设置的情况下，后续不重载的情况下，路由跳转所有页面点击分享都会应用上一次所设置的分享信息**
+3. **hash模式，安卓在不带有hash路径(即不带`#/`)进入网站，会导致设置分享时，所设置的域名hash部分后被打断包含hash（`#/...`），参数与路径等信息无法进行分享**
